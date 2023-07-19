@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>RevPi Con M-Bus :: PoC Revolution Pi Dokumentation</title>
-    <link rel="canonical" href="https://shartleib.github.io/revpidoc/revpidoc/1/revpi_con_mbus.html">
     <link rel="prev" href="revpi_con_can.html">
-    <link rel="next" href="revpi_gateway_profinet.html">
+    <link rel="next" href="revpi_con_mbus_vhp.html">
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../_/css/site.css">
     <script>var uiRootPath = '../../_'</script>
@@ -56,18 +55,18 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">PoC Revolution Pi Dokumentation</a></h3>
+    <h3 class="title"><a href="index.html">PoC Revolution Pi Documentation</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Revolution Pi Documentation</a>
+    <a class="nav-link" href="index.html">Revolution Pi</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="revpi_quickstart.html">Quickstart with your Revolution Pi</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="revpi_general.html">Revolution Pi installation</a>
+    <a class="nav-link" href="revpi_general.html">Revolution Pi</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="revpi_connect_3.html">Revolution Pi Connect 3</a>
@@ -97,7 +96,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="revpi_expention_moduls.html">Revolution Pi expention moduls</a>
+    <a class="nav-link" href="revpi_expention_moduls.html">Expention Moduls</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="revpi_dio.html">RevPI Digital IO modules</a>
@@ -115,7 +114,7 @@
     <a class="nav-link" href="revpi_con_mbus.html">RevPi Con M-Bus</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <span class="nav-text">xref:revpi_con_mbus_vhp.adoc</span>
+    <a class="nav-link" href="revpi_con_mbus_vhp.html">RevPi Con M-Bus VHP</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="revpi_gateway_profinet.html">RevPi Gateway PROFINET IRT Slave</a>
@@ -138,15 +137,15 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">PoC Revolution Pi Dokumentation</span>
-    <span class="version">1</span>
+    <span class="title">PoC Revolution Pi Documentation</span>
+    <span class="version">1-beta.1</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="index.html">PoC Revolution Pi Dokumentation</a>
+      <a class="title" href="index.html">PoC Revolution Pi Documentation</a>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="index.html">1</a>
+          <a href="index.html">1-beta.1</a>
         </li>
       </ul>
     </li>
@@ -161,9 +160,9 @@
   <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">PoC Revolution Pi Dokumentation</a></li>
-    <li><a href="index.html">Revolution Pi Documentation</a></li>
-    <li><a href="revpi_expention_moduls.html">Revolution Pi expention moduls</a></li>
+    <li><a href="index.html">PoC Revolution Pi Documentation</a></li>
+    <li><a href="index.html">Revolution Pi</a></li>
+    <li><a href="revpi_expention_moduls.html">Expention Moduls</a></li>
     <li><a href="revpi_con_mbus.html">RevPi Con M-Bus</a></li>
   </ul>
 </nav>
@@ -175,12 +174,118 @@
 </aside>
 <article class="doc">
 <h1 class="page">RevPi Con M-Bus</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p>include::partial$connecting_conbridge.adoc</p>
+<p>The communication modules RevPi Con M-Bus and RevPi Con CAN are extension modules for RevPi Connect.</p>
+</div>
+<div class="paragraph">
+<p>When assembling these modules you have to consider  following:</p>
+</div>
+<div class="paragraph">
+<p>You can connect one RevPi Con M-Bus or one RevPi Con CAN module to the RevPi Connect. If you connect two identical modules, none of them will work.
+You can connect a RevPi Con CAN and a RevPi Con M-Bus module to the RevPi Connect.
+The communication module is powered via RevPi Connect.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Use the ConBridge to connect the communication modules on the right side to the RevPi Connect. The communication modules can be damaged if you accidentally connect them to the PiBridge on the left side. You can distinguish the jumpers on the color. The ConBridge is grey and the PiBridge is black.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The modules may only be connected and removed as long as the power supply of the RevPi is switched off, otherwise your devices may be damaged.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/revpi_connecting_pibridge.webp" alt="revpi connecting pibridge">
+</div>
+</div>
+<div class="paragraph">
+<p>Plug the ConBridge into the ConBridge connectors of the RevPi Connect and the RevPi Con M-Bus as shown.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="conbridge-plug"><a class="anchor" href="#conbridge-plug"></a>ConBridge Plug</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="signals"><a class="anchor" href="#signals"></a>Signals</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Location</th>
+<th class="tableblock halign-left valign-top">Signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RX</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TX</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GND</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPI.CS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPI.MISO</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPI.CLK</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPI.MOSI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GND</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RESET</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5V</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="revpi_con_can.html">RevPi Con CAN</a></span>
-  <span class="next"><a href="revpi_gateway_profinet.html">RevPi Gateway PROFINET IRT Slave</a></span>
+  <span class="next"><a href="revpi_con_mbus_vhp.html">RevPi Con M-Bus VHP</a></span>
 </nav>
 </article>
   </div>
