@@ -8,7 +8,5 @@
 
 === PiBridge
 
-include::partial$connecting_pibridge.adoc
-
 === Connecting sensors and actors
 ==  I/O Module

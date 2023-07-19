@@ -1,1 +1,3 @@
 = RevPi Con CAN
+
+include::partial$connecting_conbridge.adoc

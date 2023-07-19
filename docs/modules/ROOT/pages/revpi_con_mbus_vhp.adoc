@@ -1,1 +1,3 @@
 = RevPi Con M-Bus VHP
+
+include::partial$connecting_conbridge.adoc
