@@ -1,2 +1,2 @@
-* xref::legacy_hardware.adoc[]
+. xref:legacy_hardware.adoc[]
 
