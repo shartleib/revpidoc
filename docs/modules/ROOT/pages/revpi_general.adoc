@@ -1,4 +1,4 @@
-= Revolution Pi installation
+= Revolution Pi
 
 [TIP]
 ====
