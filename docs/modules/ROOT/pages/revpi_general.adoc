@@ -1,5 +1,10 @@
 = Revolution Pi installation
 
+[TIP]
+====
+Use our forum to connect and discuss with the Revolution Pi community. -> link:https://revolutionpi.com/forum/[Revolution Pi Forum]
+====
+
 == technical Data
 
 === Raspberry Pi Compute Module

@@ -1,3 +1,4 @@
 = RevPi Con CAN
 
-include::partial$connecting_conbridge.adoc
+include::partial$connecting_conbridge.adoc[]
+
