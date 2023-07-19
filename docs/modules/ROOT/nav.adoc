@@ -1,7 +1,7 @@
-.xref:index.adoc[]
+* xref:index.adoc[]
 * xref:revpi_quickstart.adoc[]
 * xref:revpi_general.adoc[]
-** xref:revpi_general.adoc[Installation]
+** xref:revpi_general.adoc[]
 ** xref:revpi_connect_3.adoc[]
 ** xref:revpi_connect_4.adoc[]
 ** xref:revpi_connect_flat.adoc[]
@@ -25,6 +25,6 @@
 
 * xref:examples/examples.adoc[]
 
-* xref:faq/faq.adoc
+* xref:faq/faq.adoc[]
 
-* xref:legacy_hardware/legacy_hardware.adoc
+* xref:legacy_hardware/legacy_hardware.adoc[]
