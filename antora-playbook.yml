@@ -2,7 +2,7 @@ site:
   title: PoC Revolution Pi Dokumentation
   # the 404 page and sitemap files only get generated when the url property is set
   url: https://shartleib.github.io/revpidoc
-  start_page: revpidoc::index.adoc
+  start_page: docs::index.adoc
 content:
   sources:
     - url: https://github.com/shartleib/revpidoc.git
