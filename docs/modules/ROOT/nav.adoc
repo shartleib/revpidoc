@@ -24,3 +24,7 @@
 ** xref:revpi_gateway_ethernetip.adoc[]
 
 * xref:examples/examples.adoc[]
+
+* xref:faq/faq.adoc
+
+* xref:legacy_hardware/legacy_hardware.adoc
