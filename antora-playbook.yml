@@ -5,9 +5,8 @@ site:
   start_page: docs::index.adoc
 content:
   sources:
-    - url: https://github.com/shartleib/revpidoc.git
-      branches: [main]
-      start_path: docs
+    - url: .
+      branches: HEAD
 asciidoc:
   attributes:
     experimental: ''
