@@ -1,5 +1,5 @@
 name: revpidoc
-title: Revolution Pi Dokumentation
+title: PoC Revolution Pi Dokumentation
 version: 1.0
 nav:
   - modules/ROOT/nav.adoc

@@ -1,1 +1,4 @@
 = Revolution Pi Documentation
+== About Revolution Pi
+== About this documentation
+== Document Structure
