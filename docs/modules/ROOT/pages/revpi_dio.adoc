@@ -1,0 +1,14 @@
+= RevPI Digital IO modules
+
+== Technical Data
+
+== Connecting I/O Module to RevPi
+
+=== Power Supply
+
+=== PiBridge
+
+include::partial$connecting_pibridge.adoc
+
+=== Connecting sensors and actors
+==  I/O Module

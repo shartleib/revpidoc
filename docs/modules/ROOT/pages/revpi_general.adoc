@@ -1,0 +1,72 @@
+= Revolution Pi installation
+== technical Data
+=== Raspberry Pi Compute Module
+|===
+|Feature |CM1 |CM3/3+ |CM4S |CM4
+
+|Processor
+|BCM2835
+|BCM2837
+|BCM2711
+|BCM2711
+
+|Memory RAM
+|512MB
+|1GB
+|1GB
+|1GB/2GB/4GB/8GB
+
+|Memory eMMC
+|
+|0/8/16/32GB
+|0/8/16/32GB
+|0/8/16/32GB
+
+|Ethernet
+|None
+|None
+|None
+|1xGBit ethernet
+
+|USB
+|1 x USB2.0
+|1 x USB2.0
+|1 x USB2.0
+|1 x USB2.0
+
+|HDMI
+|1 x 1080p60
+|1 x 1080p60
+|1 x 4k
+|1 x 4k
+
+|WiFi
+|None
+|None
+|None
+|2.4GHz/5.0GHz 802.11b/g/n/ac (opt)
+
+|Bluetooth
+|None
+|None
+|None
+|5.0, BLE (opt)
+
+|PCIe
+|None
+|None
+|None
+|PCIe 1-lane Host, Gen 2 ( 5Gbps )
+
+|(usable) GPIOs
+|48
+|48
+|48
+|28
+
+|Form factor
+|SODIMM
+|SODIMM
+|SODIMM
+|DF40C-100DS-0.4v, DF40HC(3.0)-100DS-0.4v
+|===
