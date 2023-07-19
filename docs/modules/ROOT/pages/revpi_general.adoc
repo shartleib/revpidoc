@@ -1,5 +1,7 @@
 = Revolution Pi installation
+
 == technical Data
+
 === Raspberry Pi Compute Module
 |===
 |Feature |CM1 |CM3/3+ |CM4S |CM4

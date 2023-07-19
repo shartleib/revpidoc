@@ -1,4 +1,8 @@
-= Revolution Pi Documentation
+= Revolution Pi
+
 == About Revolution Pi
+Revolution Pi is an open, modular and inexpensive industrial PC based on the well-known Raspberry Pi. Housed in a slim DIN-rail housing, the three available base modules can be seamlessly expanded by a variety of suitable I/O modules and fieldbus gateways. The 24V powered modules are connected via an overhead connector in seconds and can be easily configured via a graphical configuration tool.
+
+To achieve a real industrial suitability according to EN 61131-2 or IEC 61131-2, the rather unknown Raspberry Pi Compute Module was used as a basis. The module, which looks like a notebook RAM bar, is limited to the essentials and does not have any external interfaces. With the Raspberry Pi Compute Module the foundation has been laid for equipping the Raspberry Pi with a robust and industry-compatible periphery developed by us, which meets all important industrial standards. On the software side, the Revolution Pi has a specially adapted Raspberry Pi OS (formerly known as Raspbian) operating system, which is equipped with a real-time patch. The use of Raspberry Pi OS ensures that most of the applications developed for the Raspberry Pi can also be used on the Revolution Pi.
+
 == About this documentation
-== Document Structure

@@ -1,6 +1,7 @@
 name: revpidoc
-title: PoC Revolution Pi Dokumentation
+title: PoC Revolution Pi Documentation
 version: 1.0
+prerelease: -beta.1
 nav:
   - modules/ROOT/nav.adoc
   - modules/examples/nav.adoc

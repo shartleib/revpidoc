@@ -16,7 +16,7 @@
 ** xref:revpi_mio.adoc[]
 ** xref:revpi_con_can.adoc[]
 ** xref:revpi_con_mbus.adoc[]
-** xref:revpi_con_mbus_vhp.adoc
+** xref:revpi_con_mbus_vhp.adoc[]
 ** xref:revpi_gateway_profinet.adoc[]
 ** xref:revpi_gateway_profibus.adoc[]
 ** xref:revpi_gateway_ethercat.adoc[]
