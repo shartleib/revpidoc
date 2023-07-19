@@ -6,7 +6,7 @@ site:
 content:
   sources:
     - url: .
-      branches: [main]D
+      branches: [main]
       start_path: docs
 asciidoc:
   attributes:
