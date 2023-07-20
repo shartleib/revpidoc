@@ -1,7 +1,7 @@
 = Quickstart
 
 == Introduction
-Welcome to your new IIoT device! In this guide, you'll learn about its key features, functionalities, and the many benefits it can bring to your operations.
+Welcome to your new IIoT device! 😀✌ In this guide, you'll learn about its key features, functionalities, and the many benefits it can bring to your operations.
 
 == Package Contents
 This section provides a detailed list of all the items that came with your package. Check to make sure you have everything you need to get started.
@@ -16,7 +16,7 @@ Now let's get your device up and running! This section offers a step-by-step gui
 == Configuration
 In this part, we will guide you on how to configure your device via its user interface or associated app. We'll cover everything from connecting to a network & finde the Device, setting up security features, to adjusting device-specific settings.
 
-=== monitor, mouse and tastatur
+=== Monitor, Mouse and Tastatur
 
 === Use SSH
 
@@ -24,7 +24,7 @@ In this part, we will guide you on how to configure your device via its user int
 
 
 == Getting Started
-Now that your device is set up, it's time to start using it! This section provides basic steps on how to navigate and use your new IIoT device, such as how to read or analyze data, and how to use basic functionalities.
+🚀🚀🚀 Now that your device is set up, it's time to start using it! This section provides basic steps on how to navigate and use your new IIoT device, such as how to read or analyze data, and how to use basic functionalities.
 
 === PiCtory
 
