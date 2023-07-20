@@ -1,1 +1,47 @@
 = Quickstart
+
+== Introduction
+Welcome to your new IIoT device! In this guide, you'll learn about its key features, functionalities, and the many benefits it can bring to your operations.
+
+== Package Contents
+This section provides a detailed list of all the items that came with your package. Check to make sure you have everything you need to get started.
+
+== Requirements
+Before we jump into the setup, let's make sure you have everything in place. This section outlines all the requirements, such as network access, software, or tools, you might need for the installation.
+
+== Installation
+Now let's get your device up and running! This section offers a step-by-step guide to installing your device, including where and how to place it, and instructions on connecting it to Ethernet.
+
+
+== Configuration
+In this part, we will guide you on how to configure your device via its user interface or associated app. We'll cover everything from connecting to a network & finde the Device, setting up security features, to adjusting device-specific settings.
+
+=== monitor, mouse and tastatur
+
+=== Use SSH
+
+=== Webstatus
+
+
+== Getting Started
+Now that your device is set up, it's time to start using it! This section provides basic steps on how to navigate and use your new IIoT device, such as how to read or analyze data, and how to use basic functionalities.
+
+=== PiCtory
+
+== Troubleshooting
+Don't worry if you encounter any bumps along the way - we've got you covered! This section provides handy tips and solutions for common issues that might come up.
+
+NOTE: The keyboard layout is german (qwertz) by default. If you are using an english keyboard (qwerty), the “y” and “z” keys are swapped. Keep that in mind when entering a password containing those letters. You can update your keyboard configuration by changing the configuration file. You can open this file by using “sudo raspi-config” command.
+
+== Support and Customer Service
+If you have any questions or problems, we're here to help! This section contains all the information you need to reach out to our support team, including contact details.
+
+=== Community Forum
+
+=== Support Teams contact
+
+== Safety Guidelines
+Safety is a priority. In this section, we have outlined some basic safety instructions to ensure you can use your new device safely and securely.
+
+TIP: If you feel unsure about the technique, ask colleagues or the community for help.
+
