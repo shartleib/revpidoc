@@ -24,7 +24,7 @@
 ** xref:revpi_hardware/revpi_gateway_ethernetip.adoc[]
 
 * xref:examples/examples.adoc[]
-* xref:examples/python/tensorflowlite.adoc[]
+** xref:examples/python/tensorflowlite.adoc[]
 
 * xref:faq/faq.adoc[]
 
