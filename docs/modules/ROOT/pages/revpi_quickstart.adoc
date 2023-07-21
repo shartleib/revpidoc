@@ -1,5 +1,7 @@
 = Quickstart
 
+TEXT 😁✌️
+
 == Introduction
 Welcome to your new IIoT device! 😀✌ In this guide, you'll learn about its key features, functionalities, and the many benefits it can bring to your operations.
 
