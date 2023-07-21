@@ -1,0 +1,123 @@
+= Tensorflow lite with Revolution Pi
+
+== Prerequisites
+You need a usb camera and a Revolution Pi Core 3, connect 3+, connect 4, a monitor/keyboard/mouse
+
+== Preparation
+Connect a USB camera to your RevPi.
+Connect to your RevPi via SSH or open a terminal local on the RevPi.
+Update your OS with the following step, copy the commands to the terminal and press btn:[ENTER].
+
+[source,bash]
+----
+sudo apt update
+----
+
+[source,bash]
+----
+sudo apt upgrade
+----
+
+Next: install the python environment to protect your python installation on your system. Copy the  following commands to your terminal and press btn:[ENTER].
+
+[source,bash]
+----
+sudo apt install python3-venv
+----
+
+install virtuelenv in Python to protect your python installation on your system. Copy the  following commands to your terminal and press btn:[ENTER].
+
+[source,bash]
+----
+sudo -H python3 -m pip install virtualenv
+----
+
+Test your USB camera connection before you start. Copy the  following commands to your terminal and press btn:[ENTER].
+
+[source,bash]
+----
+lusb
+----
+
+Result -->
+
+Create a folder for the example  and go to it.
+
+[source,bash]
+----
+mkdir project
+----
+
+[source,bash]
+----
+cd project
+----
+
+Create a python environment...
+[source,bash]
+----
+python3 -m virtualenv env
+----
+
+...and activate it.
+
+[source,bash]
+----
+source env/bin/activate
+----
+
+
+Install tensorflow lite for Python
+
+[source,bash]
+----
+python3 -m pip install tflite-runtime
+----
+
+Test the correct installation of tensorflow lite
+
+[source,bash]
+----
+python3
+----
+
+[source,Python]
+----
+import tflite_runtime
+tflite_runtime.__version__
+# Both of the commands above should execute without errors
+quit()
+----
+
+Install (clone) the tensorflow lite examples and install
+
+[source,bash]
+----
+git clone https://github.com/tensorflow/examples --depth 1
+----
+
+[source,bash]
+----
+sudo apt-get install libatlas-base-dev
+----
+
+Navigate to raspberry pi example folder and setup up the project, then start Python3 classify.py (don’t forget to activate your python environment: source env/bin/activate)
+
+[source,bash]
+----
+cd examples/lite/examples/image_classification/raspberry_pi
+----
+
+[source,bash]
+----
+sh setup.sh
+----
+
+[source,bash]
+----
+python3 classify.py
+----
+
+== Result
+
+You should now see a camera image and display what has dedected.
