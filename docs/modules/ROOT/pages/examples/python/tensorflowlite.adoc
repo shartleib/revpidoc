@@ -9,7 +9,7 @@ TensorFlow Lite is an open-source deep learning framework developed by Google fo
 
 For more information, you can visit the TensorFlow Lite documentation at this link: https://www.tensorflow.org/lite/guide
 
-== Installing Tensor Flow Lite on your Revolution Pi
+=== Installing Tensor Flow Lite on your Revolution Pi
 
 Once all hardware requirements are met, you can install the required program data for Tensor Flow Lite. In practice, the combination of Python with Tensor Flow Lite has proven to be effective on devices such as the Raspberry Pi. For a simplified start, Tensor Flow offers a simplified Python package that contains only the interpreter. The package tflite_runtime is much smaller than the complete Tensor Flow installation and contains only the bare minimum of program code for the start. This is essentially the Interpreter Python class. We have chosen this model as a starting point. As only .tflite models are used in the tests, this variant is sufficient. It also uses the available storage space sparingly.
 
@@ -33,7 +33,7 @@ pip3 install --extra-index-url=https://google-coral.github.io/py-repo/ tflite_ru
 ----
 You have now completed the basic installation of Tensor Flow Lite.
 
-== Installing Tensor Flow Lite Model on your Revolution Pi
+=== Installing Tensor Flow Lite Model on your Revolution Pi
 
 However, before you can start object detection, you need a model as a basis. For example, this contains the description of an apple, a banana, or other fruits. Only with this is Tensor Flow subsequently able to evaluate the data captured by the camera and identify objects.
 
@@ -70,36 +70,36 @@ python3 classify.py --model efficientdet_lite0.tflite
 
 With the downloaded model, you can start your first attempts at object identification: hold a few easily classifiable objects, such as a banana, a cup, or your smartphone in front of the camera and observe the results that the system returns. Tensor Flow Lite draws a rectangle around the recognized object, indicates the name of the object, and provides it with a recognition probability in percent. In addition, in the top left corner, you see the number of frames per second (FPS). The pipeline includes processes other than model inference, including visualizing the detection results. If you want to implement a faster number of frames per second with the same hardware, you should start your inference pipeline in headless mode without visualization.
 
-= Create and deploy your own model on your Revolution Pi
+== Create and deploy your own model on your Revolution Pi
 
-== What is Teachable Machine?
+=== What is Teachable Machine?
 
 Teachable Machine is a web-based tool developed by Google that makes creating machine learning models fast, easy, and accessible to everyone. You can use it to train models to recognize images, sounds, and poses without needing any prior coding or machine learning experience. Once a model is trained, you can export it to use in different applications or projects, such as in apps or websites.
 
 For more information, visit the Teachable Machine website at: https://teachablemachine.withgoogle.com/
 
-== Create a new project in Teachable Machine
+=== Create a new project in Teachable Machine
 Visit the Teachable Machine website (https://teachablemachine.withgoogle.com/) and click on "Get Started". Then, choose the type of data for your project - Image, Audio, or Pose.
 
-== Gather and group your data
+=== Gather and group your data
 This can be images, sounds, or poses that you upload from files or capture live through a webcam connected to your computer. For this example, we'll assume you're creating a model to recognize images of a tomato, a sweet potato, an avocado, a garlic bulb, and a roll. Create a new class for each object and add the relevant images to each one.
 
-== Set the model type for your hardware
+=== Set the model type for your hardware
 If you're using a Raspberry Pi, the standard image model is typically sufficient, although you might want to use the embedded image model if your Raspberry Pi is less powerful or has limited storage space.
 
-== Train your model
+=== Train your model
 Once you've uploaded your data, you can begin training your model. Start with the standard configuration for the training parameters. You might need to adjust the "Epoch" parameter if you're not happy with the results. An epoch is when the algorithm has seen all data. With a starting value of 50, this means the training data set will be processed 50 times, in different orders. You might find that increasing the number of epochs improves your model's ability to predict data.
 
-== Test your model
+=== Test your model
 After training is complete, you can use the preview window to test the model's accuracy using your webcam. If you're happy with the results, you can proceed to export the model. If not, you might need to adjust your image data and retrain the model.
 
-== Export your model
+=== Export your model
 Click on the "Export Model" button in the preview window. Choose the "Tensorflow Lite" format and save the model locally on your computer.
 
-== Transfer the model to your Revolution Pi
+=== Transfer the model to your Revolution Pi
 You can transfer your Tensorflow Lite model to your Raspberry Pi in the same way you would transfer any other file. For example, you could use SCP (Secure Copy Protocol) if you're transferring the file from a Unix-based system, or a tool like WinSCP if you're using Windows.
 
-== Run your model on your Revolution Pi
+=== Run your model on your Revolution Pi
 Once you have transferred the model to your Revolution Pi, you can use Tensorflow Lite to run it. Remember to adjust the command-line parameters to suit your model.
 
 That's it! You should now be able to use your Teachable Machine model on your Revolution Pi. Remember that machine learning is an iterative process - you may need to adjust and retrain your model multiple times based on the results you get.
