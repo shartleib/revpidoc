@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Tensorflow lite with Revolution Pi :: PoC Revolution Pi Dokumentation</title>
+    <title>Object Detection with Revolution Pi :: PoC Revolution Pi Dokumentation</title>
     <link rel="prev" href="../examples.html">
     <link rel="next" href="../../faq/faq.html">
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
-    <script>var uiRootPath = '../../../../_'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -139,7 +138,7 @@
     <a class="nav-link" href="../examples.html">Examples</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="tensorflowlite.html">Tensorflow lite with Revolution Pi</a>
+    <a class="nav-link" href="tensorflowlite.html">Object Detection with Revolution Pi</a>
   </li>
 </ul>
   </li>
@@ -181,7 +180,7 @@
   <ul>
     <li><a href="../../index.html">PoC Revolution Pi Documentation</a></li>
     <li><a href="../examples.html">Examples</a></li>
-    <li><a href="tensorflowlite.html">Tensorflow lite with Revolution Pi</a></li>
+    <li><a href="tensorflowlite.html">Object Detection with Revolution Pi</a></li>
   </ul>
 </nav>
 <div class="edit-this-page"><a href="https://github.com/shartleib/revpidoc/edit/main/docs/modules/ROOT/pages/examples/python/tensorflowlite.adoc">Edit this Page</a></div>
@@ -191,151 +190,187 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Tensorflow lite with Revolution Pi</h1>
-<div class="sect1">
-<h2 id="prerequisites"><a class="anchor" href="#prerequisites"></a>Prerequisites</h2>
+<h1 class="page">Object Detection with Revolution Pi</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>You need a usb camera and a Revolution Pi Core 3, connect 3+, connect 4, a monitor/keyboard/mouse</p>
+<p>This Example demonstrate object detection in combination with Revolution Pi and Tensor Flow Lite.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="preparation"><a class="anchor" href="#preparation"></a>Preparation</h2>
+<h2 id="what-is-tensor-flow-lite"><a class="anchor" href="#what-is-tensor-flow-lite"></a>What is Tensor Flow Lite</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Connect a USB camera to your RevPi.
-Connect to your RevPi via SSH or open a terminal local on the RevPi.
-Update your OS with the following step, copy the commands to the terminal and press <b class="button">ENTER</b>.</p>
+<p>TensorFlow Lite is an open-source deep learning framework developed by Google for on-device inference of machine learning models. It&#8217;s designed to be lightweight and efficient, enabling the execution of ML models on devices with limited computational resources like smartphones and IoT devices. TensorFlow Lite supports a variety of ML models and leverages hardware acceleration if available.</p>
+</div>
+<div class="paragraph">
+<p>For more information, you can visit the TensorFlow Lite documentation at this link: <a href="https://www.tensorflow.org/lite/guide" class="bare">https://www.tensorflow.org/lite/guide</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-tensor-flow-lite-on-your-revolution-pi"><a class="anchor" href="#installing-tensor-flow-lite-on-your-revolution-pi"></a>Installing Tensor Flow Lite on your Revolution Pi</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once all hardware requirements are met, you can install the required program data for Tensor Flow Lite. In practice, the combination of Python with Tensor Flow Lite has proven to be effective on devices such as the Raspberry Pi. For a simplified start, Tensor Flow offers a simplified Python package that contains only the interpreter. The package tflite_runtime is much smaller than the complete Tensor Flow installation and contains only the bare minimum of program code for the start. This is essentially the Interpreter Python class. We have chosen this model as a starting point. As only .tflite models are used in the tests, this variant is sufficient. It also uses the available storage space sparingly.</p>
+</div>
+<div class="paragraph">
+<p>Before installing Tensor Flow Lite, you need to install some dependent software packages:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt update</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt upgrade</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt-get install libatlas-base-dev libhdf5-dev libc-ares-dev libeigen3-dev</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Next: install the python environment to protect your python installation on your system. Copy the  following commands to your terminal and press <b class="button">ENTER</b>.</p>
+<p>Next come the Python packages you need for installation:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt install python3-venv</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt-get install python3-pip python3-dev</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>install virtuelenv in Python to protect your python installation on your system. Copy the  following commands to your terminal and press <b class="button">ENTER</b>.</p>
+<p>Finally, install the Tensor Flow Lite runtime environment. At this point, there are several sources. We have chosen pip3, the package manager of Python 3 and Google as a source:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo -H python3 -m pip install virtualenv</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pip3 install --extra-index-url=https://google-coral.github.io/py-repo/ tflite_runtime</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Test your USB camera connection before you start. Copy the  following commands to your terminal and press <b class="button">ENTER</b>.</p>
+<p>You have now completed the basic installation of Tensor Flow Lite.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installing-tensor-flow-lite-model-on-your-revolution-pi"><a class="anchor" href="#installing-tensor-flow-lite-model-on-your-revolution-pi"></a>Installing Tensor Flow Lite Model on your Revolution Pi</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>However, before you can start object detection, you need a model as a basis. For example, this contains the description of an apple, a banana, or other fruits. Only with this is Tensor Flow subsequently able to evaluate the data captured by the camera and identify objects.</p>
+</div>
+<div class="paragraph">
+<p>You should clone this model directly from Tensor Flow&#8217;s GitHub area. If you have not yet installed git, execute the following command first:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">lusb</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt install git</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Result -&#8594;</p>
-</div>
-<div class="paragraph">
-<p>Create a folder for the example  and go to it.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mkdir project</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd project</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Create a python environment&#8230;&#8203;</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">python3 -m virtualenv env</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>&#8230;&#8203;and activate it.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">source env/bin/activate</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Install tensorflow lite for Python</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">python3 -m pip install tflite-runtime</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Test the correct installation of tensorflow lite</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">python3</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-Python hljs" data-lang="Python">import tflite_runtime
-tflite_runtime.__version__
-# Both of the commands above should execute without errors
-quit()</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Install (clone) the tensorflow lite examples and install</p>
+<p>Once git is installed, you can clone the repository with the examples onto your Raspberry Pi. Use the --depth 1 parameter so that no other repositories are cloned that reference the one to be cloned.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git clone https://github.com/tensorflow/examples --depth 1</code></pre>
 </div>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt-get install libatlas-base-dev</code></pre>
-</div>
-</div>
 <div class="paragraph">
-<p>Navigate to raspberry pi example folder and setup up the project, then start Python3 classify.py (don’t forget to activate your python environment: source env/bin/activate)</p>
+<p>After completing the procedure, switch to the newly created directory. Here you will find the Python script and a setup script that downloads the required model:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cd examples/lite/examples/image_classification/raspberry_pi</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>In the next step, use the script to install the required Python packages and download the TFLite model "EfficientDet":</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sh setup.sh</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>You now have everything you need for your first attempts with Tensor Flow. The Tensor Flow Lite runtime environment is automatically installed using the script. After entering the following command, a window appears showing the current image of your connected camera:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">python3 classify.py</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">python3 classify.py --model efficientdet_lite0.tflite</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>With the downloaded model, you can start your first attempts at object identification: hold a few easily classifiable objects, such as a banana, a cup, or your smartphone in front of the camera and observe the results that the system returns. Tensor Flow Lite draws a rectangle around the recognized object, indicates the name of the object, and provides it with a recognition probability in percent. In addition, in the top left corner, you see the number of frames per second (FPS). The pipeline includes processes other than model inference, including visualizing the detection results. If you want to implement a faster number of frames per second with the same hardware, you should start your inference pipeline in headless mode without visualization.</p>
+</div>
+</div>
+</div>
+<h1 id="create-and-deploy-your-own-model-on-your-revolution-pi" class="sect0"><a class="anchor" href="#create-and-deploy-your-own-model-on-your-revolution-pi"></a>Create and deploy your own model on your Revolution Pi</h1>
+<div class="sect1">
+<h2 id="what-is-teachable-machine"><a class="anchor" href="#what-is-teachable-machine"></a>What is Teachable Machine?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Teachable Machine is a web-based tool developed by Google that makes creating machine learning models fast, easy, and accessible to everyone. You can use it to train models to recognize images, sounds, and poses without needing any prior coding or machine learning experience. Once a model is trained, you can export it to use in different applications or projects, such as in apps or websites.</p>
+</div>
+<div class="paragraph">
+<p>For more information, visit the Teachable Machine website at: <a href="https://teachablemachine.withgoogle.com/" class="bare">https://teachablemachine.withgoogle.com/</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="result"><a class="anchor" href="#result"></a>Result</h2>
+<h2 id="create-a-new-project-in-teachable-machine"><a class="anchor" href="#create-a-new-project-in-teachable-machine"></a>Create a new project in Teachable Machine</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You should now see a camera image and display what has dedected.</p>
+<p>Visit the Teachable Machine website (<a href="https://teachablemachine.withgoogle.com/" class="bare">https://teachablemachine.withgoogle.com/</a>) and click on "Get Started". Then, choose the type of data for your project - Image, Audio, or Pose.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="gather-and-group-your-data"><a class="anchor" href="#gather-and-group-your-data"></a>Gather and group your data</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This can be images, sounds, or poses that you upload from files or capture live through a webcam connected to your computer. For this example, we&#8217;ll assume you&#8217;re creating a model to recognize images of a tomato, a sweet potato, an avocado, a garlic bulb, and a roll. Create a new class for each object and add the relevant images to each one.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="set-the-model-type-for-your-hardware"><a class="anchor" href="#set-the-model-type-for-your-hardware"></a>Set the model type for your hardware</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you&#8217;re using a Raspberry Pi, the standard image model is typically sufficient, although you might want to use the embedded image model if your Raspberry Pi is less powerful or has limited storage space.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="train-your-model"><a class="anchor" href="#train-your-model"></a>Train your model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once you&#8217;ve uploaded your data, you can begin training your model. Start with the standard configuration for the training parameters. You might need to adjust the "Epoch" parameter if you&#8217;re not happy with the results. An epoch is when the algorithm has seen all data. With a starting value of 50, this means the training data set will be processed 50 times, in different orders. You might find that increasing the number of epochs improves your model&#8217;s ability to predict data.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="test-your-model"><a class="anchor" href="#test-your-model"></a>Test your model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After training is complete, you can use the preview window to test the model&#8217;s accuracy using your webcam. If you&#8217;re happy with the results, you can proceed to export the model. If not, you might need to adjust your image data and retrain the model.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="export-your-model"><a class="anchor" href="#export-your-model"></a>Export your model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Click on the "Export Model" button in the preview window. Choose the "Tensorflow Lite" format and save the model locally on your computer.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="transfer-the-model-to-your-revolution-pi"><a class="anchor" href="#transfer-the-model-to-your-revolution-pi"></a>Transfer the model to your Revolution Pi</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can transfer your Tensorflow Lite model to your Raspberry Pi in the same way you would transfer any other file. For example, you could use SCP (Secure Copy Protocol) if you&#8217;re transferring the file from a Unix-based system, or a tool like WinSCP if you&#8217;re using Windows.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="run-your-model-on-your-revolution-pi"><a class="anchor" href="#run-your-model-on-your-revolution-pi"></a>Run your model on your Revolution Pi</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once you have transferred the model to your Revolution Pi, you can use Tensorflow Lite to run it. Remember to adjust the command-line parameters to suit your model.</p>
+</div>
+<div class="paragraph">
+<p>That&#8217;s it! You should now be able to use your Teachable Machine model on your Revolution Pi. Remember that machine learning is an iterative process - you may need to adjust and retrain your model multiple times based on the results you get.</p>
 </div>
 </div>
 </div>
