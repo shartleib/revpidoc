@@ -1,3 +1,7 @@
+image::revpi_logo_banner_bw.svg[revpilogo,300,300,align="left"]
+== RevPi DIO
+Article No.: 100197
+
 == Technical Data - RevPi DIO
 
 |===
