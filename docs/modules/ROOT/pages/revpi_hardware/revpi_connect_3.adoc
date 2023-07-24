@@ -1,1 +1,3 @@
 = Revolution Pi Connect 3
+
+include::partial$note_revpi_connect_s_vs_se.adoc[]

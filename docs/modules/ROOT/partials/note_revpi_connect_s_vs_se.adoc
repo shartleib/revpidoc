@@ -1,0 +1,2 @@
+
+WARNING: The RevPi Gateways are not supported by the RevPi SE series as well as by the RevPi Connect 4.
