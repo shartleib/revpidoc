@@ -297,6 +297,111 @@ The modules may only be connected and removed as long as the power supply of the
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>The communication modules RevPi Con M-Bus and RevPi Con CAN are extension modules for RevPi Connect.</p>
+</div>
+<div class="paragraph">
+<p>When assembling these modules you have to consider  following:</p>
+</div>
+<div class="paragraph">
+<p>You can connect one RevPi Con M-Bus or one RevPi Con CAN module to the RevPi Connect. If you connect two identical modules, none of them will work.
+You can connect a RevPi Con CAN and a RevPi Con M-Bus module to the RevPi Connect.
+The communication module is powered via RevPi Connect.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Use the ConBridge to connect the communication modules on the right side to the RevPi Connect. The communication modules can be damaged if you accidentally connect them to the PiBridge on the left side. You can distinguish the jumpers on the color. The ConBridge is grey and the PiBridge is black.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The modules may only be connected and removed as long as the power supply of the RevPi is switched off, otherwise your devices may be damaged.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/revpi_connecting_pibridge.webp" alt="revpi connecting pibridge">
+</div>
+</div>
+<div class="paragraph">
+<p>Plug the ConBridge into the ConBridge connectors of the RevPi Connect and the RevPi Con M-Bus as shown.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="conbridge-plug-2"><a class="anchor" href="#conbridge-plug-2"></a>ConBridge Plug</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="signals-2"><a class="anchor" href="#signals-2"></a>Signals</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Location</th>
+<th class="tableblock halign-left valign-top">Signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RX</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TX</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GND</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPI.CS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPI.MISO</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPI.CLK</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPI.MOSI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GND</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RESET</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5V</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
