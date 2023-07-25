@@ -7,7 +7,7 @@ Use our forum to connect and discuss with the Revolution Pi community. -> link:h
 
 == Ethernet Ports
 
-IMPORTANT: eth0 = Port A, eth1 = Port B
+IMPORTANT: In Linux eth0 = Port A, eth1 = Port B on your device.
 
 === Check the IPv4 configuration
 
