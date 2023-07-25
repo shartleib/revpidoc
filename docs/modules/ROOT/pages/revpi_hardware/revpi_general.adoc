@@ -5,7 +5,6 @@
 Use our forum to connect and discuss with the Revolution Pi community. -> link:https://revolutionpi.com/forum/[Revolution Pi Forum]
 ====
 
-
 == Ethernet Ports
 
 IMPORTANT: eth0 = Port A, eth1 = Port B
