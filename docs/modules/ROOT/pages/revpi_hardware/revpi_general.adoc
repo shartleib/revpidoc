@@ -156,6 +156,8 @@ The result looks like this:
        valid_lft forever preferred_lft forever
 ----
 
+🥳🥳🥳
+
 == technical Data
 
 === Raspberry Pi Compute Module
