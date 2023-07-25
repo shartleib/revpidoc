@@ -5,6 +5,71 @@
 Use our forum to connect and discuss with the Revolution Pi community. -> link:https://revolutionpi.com/forum/[Revolution Pi Forum]
 ====
 
+
+== Ethernet
+
+=== Check the IPv4 configuration
+
+=== Check the network connection for function
+
+=== Set the IPv4 configuration to static
+
+By default, the Ethernet ports of the Revolution Pi are set to DHCP and get an IP from the network.
+
+==== IPv4 configuration in the "/etc/network/interfaces" file
+
+===== Step 1: Open the Terminal Start a Terminal application on your Revolution Pi or connect via SSH to your RevPi.
+
+===== Step 2: Edit the network configuration file The above command will open the "interfaces" file in the "nano" text editor. This file contains the network configuration for your Raspberry Pi.
+
+[source,bash]
+----
+sudo nano /etc/network/interfaces
+----
+
+===== Step 3: Locate the line with the current IP configuration of your Revolution Pi. They usually look something like this:
+
+[source]
+----
+iface eth0 inet static
+address 192.168.1.100
+netmask 255.255.255.0
+gateway 192.168.1.1
+----
+
+NOTE: Make sure to use the correct network interface (e.g., "eth0" or "wlan0") depending on which one you want to configure.
+
+===== Step 4: Change the IP address. Modify the "address" line to set the new IP address you want to use. Ensure that the IP address fits your network and is not already in use by another device. Replace "NEW_IP_ADDRESS" with the desired IP address you want to assign to your Raspberry Pi.
+
+[source]
+----
+iface eth0 inet static
+address NEW_IP_ADDRESS
+netmask 255.255.255.0
+gateway 192.168.1.1
+----
+
+===== Step 5: Save and exit the editor. After making the changes, save the file and exit the "nano" text editor. To do this, press the following keys: Hold the ⌨️ CTRL key and press ️ O (not Zero, is the letter O). Confirm the file name by pressing the ⌨️ Enter key. To exit "nano," press CTRL + X.
+
+===== Step 7: Restart the network. To apply the changes, you need to restart the network. Use the following command:
+
+[source,bash]
+----
+sudo service networking restart
+----
+
+Alternatively, you can reboot the Raspberry Pi to apply the changes:
+
+[source,bash]
+----
+sudo reboot
+----
+
+After the restart, your Revolution Pi should be using the new IP address.
+
+WARNING: Please be cautious when editing the network configuration file, as incorrect changes can lead to network issues. Make sure to make the changes correctly and create a backup of the file before editing it.
+
+
 == technical Data
 
 === Raspberry Pi Compute Module
