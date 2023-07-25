@@ -209,6 +209,213 @@
 </div>
 </div>
 <div class="sect1">
+<h2 id="ethernet-ports"><a class="anchor" href="#ethernet-ports"></a>Ethernet Ports</h2>
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+In Linux eth0 = Port A, eth1 = Port B on your device.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="check-the-ipv4-configuration"><a class="anchor" href="#check-the-ipv4-configuration"></a>Check the IPv4 configuration</h3>
+<div class="paragraph">
+<p>Open the Terminal application on your Revolution Pi or connect via SSH to your RevPi and identify the interface on which we will configure static IP address. Run below ip command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ ip add show</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The result looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether c8:3e:a7:01:6b:f7 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.88.246/24 brd 192.168.88.255 scope global dynamic noprefixroute eth0
+       valid_lft 1730sec preferred_lft 1730sec
+    inet6 fe80::ca3e:a7ff:fe01:6bf7/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+3: eth1: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc pfifo_fast state DOWN group default qlen 1000
+    link/ether c8:3e:a7:01:6b:f8 brd ff:ff:ff:ff:ff:ff
+4: pileft: &lt;BROADCAST,MULTICAST&gt; mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether f6:7b:65:df:2f:12 brd ff:ff:ff:ff:ff:ff</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="check-the-network-connection-for-function"><a class="anchor" href="#check-the-network-connection-for-function"></a>Check the network connection for function</h3>
+<div class="paragraph">
+<p><strong>nmcli</strong> is a command-line tool for controlling NetworkManager and reporting network status. It can be utilized as a replacement for nm-applet or other graphical clients. nmcli is used to create, display, edit, delete, activate, and deactivate network connections, as well as control and display network device status.</p>
+</div>
+<div class="paragraph">
+<p>Run below ip command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ nmcli connection</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The result looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">NAME                        UUID                                  TYPE      DEVICE
+DHCP eth0                   d1ae9f0b-c8a7-42aa-a238-8f1e9668f5ef  ethernet  eth0
+DHCP eth1                   4e764ae2-0a96-11ee-b8b2-97bdf6db4268  ethernet  --
+Link-local eth0 (fallback)  a9883125-de1f-4d75-a049-124ee2adcff4  ethernet  --
+Link-local eth1 (fallback)  02418238-fb3a-11ed-8321-c3d5d52b169a  ethernet  --</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="set-the-ipv4-configuration-to-static"><a class="anchor" href="#set-the-ipv4-configuration-to-static"></a>Set the IPv4 configuration to static</h3>
+<div class="paragraph">
+<p>By default, the Ethernet ports of the Revolution Pi are set to DHCP and get an IP from the network.</p>
+</div>
+<div class="sect3">
+<h4 id="run-the-nmcli-command-to-get-the-connection-name"><a class="anchor" href="#run-the-nmcli-command-to-get-the-connection-name"></a>Run the <strong>nmcli</strong> command to get the connection NAME</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ nmcli connection</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The result looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">NAME                        UUID                                  TYPE      DEVICE
+DHCP eth0                   d1ae9f0b-c8a7-42aa-a238-8f1e9668f5ef  ethernet  eth0
+DHCP eth1                   4e764ae2-0a96-11ee-b8b2-97bdf6db4268  ethernet  --
+Link-local eth0 (fallback)  a9883125-de1f-4d75-a049-124ee2adcff4  ethernet  --
+Link-local eth1 (fallback)  02418238-fb3a-11ed-8321-c3d5d52b169a  ethernet  --</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once we get the connection NAME <strong>'DHCP eth0'</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="run-below-nmcli-command-to-assign-static-ipv4-address"><a class="anchor" href="#run-below-nmcli-command-to-assign-static-ipv4-address"></a>Run below nmcli command to assign static ipv4 address</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Syntax</dt>
+<dd>
+<p>$ nmcli con mod  ‘connection-name’ ipv4.address  &lt;IP-Address&gt;</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ nmcli con mod 'DHCP eth0' ipv4.address 192.168.1.151/24</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="set-the-gateway-ip-by-running-the-command-below"><a class="anchor" href="#set-the-gateway-ip-by-running-the-command-below"></a>Set the gateway IP by running the command below</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ nmcli con mod 'DHCP eth0' ipv4.gateway 192.168.1.1</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="change-configuration-from-dhcp-to-manual"><a class="anchor" href="#change-configuration-from-dhcp-to-manual"></a>Change Configuration from DHCP to Manual</h4>
+<div class="paragraph">
+<p>This way the IP is set static and persistent on the eth0</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ nmcli con mod 'DHCP eth0' ipv4.method manual</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="set-the-dns-server-ip"><a class="anchor" href="#set-the-dns-server-ip"></a>Set the DNS server IP</h4>
+<div class="paragraph">
+<p>DNS server translates domain names to IP addresses for the internet. Add a DNS Server IP by running below command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ nmcli con mod 'DHCP eth0' ipv4.dns '8.8.8.8'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="make-the-ipv4-changes-operative"><a class="anchor" href="#make-the-ipv4-changes-operative"></a>Make the IPv4 changes operative</h4>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+If you execute this command and are connected to the device remotely via SSH, the connection will be terminated and can no longer be activated. You must then restart the device or use the second Ethernet interface on which DHCP is still active.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Disable and enable the connection so that above changes come into the effect.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ nmcli connection down d1ae9f0b-c8a7-42aa-a238-8f1e9668f5ef</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ nmcli connection up d1ae9f0b-c8a7-42aa-a238-8f1e9668f5ef</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="result"><a class="anchor" href="#result"></a>Result</h4>
+<div class="paragraph">
+<p>Now Run IP Command to check IP address,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ ip add show eth0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The result looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether c8:3e:a7:01:6b:f7 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.88.10/24 brd 192.168.88.255 scope global noprefixroute eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ca3e:a7ff:fe01:6bf7/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>🥳🥳🥳</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="technical-data"><a class="anchor" href="#technical-data"></a>technical Data</h2>
 <div class="sectionbody">
 <div class="sect2">
