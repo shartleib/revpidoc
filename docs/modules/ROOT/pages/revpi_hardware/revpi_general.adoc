@@ -169,8 +169,6 @@ The result looks like this:
        valid_lft forever preferred_lft forever
 ----
 
-🥳🥳🥳
-
 == Raspberry Pi Compute Module
 |===
 |Feature |CM1 |CM3/3+ |CM4S |CM4
