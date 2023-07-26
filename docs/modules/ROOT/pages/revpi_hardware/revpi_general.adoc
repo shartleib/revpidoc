@@ -4,17 +4,10 @@ Revolution Pi is able to run a wide range of software in industrial environments
 
 If you’ve only ever used Microsoft Windows or Apple macOS, don’t worry: Raspberry Pi OS is based on the same windows, icons, menus, and pointer (WIMP) principles, and should quickly feel familiar. The following chapter will get you started and introduce you to some of the bundled software.
 
+== Connect remote to your RevPi via SSH
 
-RJ45 GBit Ethernet sockets
-USB 3.2
-Micro HDMI
-SMA socket for connecting an optional WLAN antenna
-Micro-USB 2.0 (for firmware uploads only)
-RS485 screw terminal (4-pole)
-freely programmable 24 V input
-freely programmable relay switching contact
-freely programmable RGB LED
-PiBridge (for RevPi IO expansion modules (not compatible with gateways))
+== Connect remote to your REvPi via VNC
+
 
 == Ethernet Ports
 
