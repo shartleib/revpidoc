@@ -40,6 +40,11 @@ If you have any questions or problems, we're here to help! This section contains
 
 === Community Forum
 
+[TIP]
+====
+Use our forum to connect and discuss with the Revolution Pi community. -> link:https://revolutionpi.com/forum/[Revolution Pi Forum]
+====
+
 === Support Teams contact
 
 == Safety Guidelines

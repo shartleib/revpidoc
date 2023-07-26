@@ -1,11 +1,24 @@
 = RevPi installation
 
-[TIP]
-====
-Use our forum to connect and discuss with the Revolution Pi community. -> link:https://revolutionpi.com/forum/[Revolution Pi Forum]
-====
+Revolution Pi is able to run a wide range of software in industrial environments, including a number of different operating systems – the core software that makes a computer run. The most popular of these, and the official operating system of the Raspberry Pi Foundation, is Raspberry Pi OS. Based on Debian Linux, we're tailor-made it for the Revolution Pi and it comes with a range of extras pre-installed and ready to go.
+
+If you’ve only ever used Microsoft Windows or Apple macOS, don’t worry: Raspberry Pi OS is based on the same windows, icons, menus, and pointer (WIMP) principles, and should quickly feel familiar. The following chapter will get you started and introduce you to some of the bundled software.
+
+
+RJ45 GBit Ethernet sockets
+USB 3.2
+Micro HDMI
+SMA socket for connecting an optional WLAN antenna
+Micro-USB 2.0 (for firmware uploads only)
+RS485 screw terminal (4-pole)
+freely programmable 24 V input
+freely programmable relay switching contact
+freely programmable RGB LED
+PiBridge (for RevPi IO expansion modules (not compatible with gateways))
 
 == Ethernet Ports
+
+Übersicht der Geräte und ports 2 x RJ45 GBit Ethernet sockets
 
 IMPORTANT: In Linux eth0 = Port A, eth1 = Port B on your device.
 
@@ -158,9 +171,7 @@ The result looks like this:
 
 🥳🥳🥳
 
-== technical Data
-
-=== Raspberry Pi Compute Module
+== Raspberry Pi Compute Module
 |===
 |Feature |CM1 |CM3/3+ |CM4S |CM4
 
