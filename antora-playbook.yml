@@ -12,7 +12,7 @@ content:
       start_path: docs
 antora:
   extensions:
-    - require: "@antora/lunr-extension" # https://gitlab.com/antora/antora-lunr-extension/
+    - require: "https://gitlab.com/antora/antora-lunr-extension/"
 asciidoc:
   attributes:
     experimental: ''
