@@ -10,9 +10,6 @@ content:
         - main
       edit_url: "https://github.com/shartleib/revpidoc/docs/edit/main/{path}"
       start_path: docs
-antora:
-  extensions:
-  - '@antora/lunr-extension'
 asciidoc:
   attributes:
     experimental: ''
