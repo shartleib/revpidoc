@@ -5,9 +5,14 @@ site:
   start_page: revpidoc::index.adoc
 content:
   sources:
-    - url: .
-      branches: [main]
+    - url: ./
+      branches:
+        - main
+      edit_url: "https://github.com/shartleib/revpidoc/docs/edit/main/{path}"
       start_path: docs
+antora:
+  extensions:
+    - require: "@antora/lunr-extension" # https://gitlab.com/antora/antora-lunr-extension/
 asciidoc:
   attributes:
     experimental: ''
@@ -18,3 +23,10 @@ ui:
   bundle:
     url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
     snapshot: true
+runtime:
+  log:
+    level: info
+    failure_level: warn
+    format: pretty
+  fetch: true
+  cache_dir: ./.cache/antora
