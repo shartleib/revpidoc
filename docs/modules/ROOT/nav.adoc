@@ -11,7 +11,7 @@
 ** xref:revpi_software/revpi_pictory.adoc[]
 ** xref:revpi_software/revpi_webstatus.adoc[]
 
-* xref:revpi_hardware/revpi_expention_moduls.adoc[]
+* xref:revpi_hardware/revpi_expansion_modules.adoc[]
 ** xref:revpi_hardware/revpi_dio.adoc[]
 ** xref:revpi_hardware/revpi_aio.adoc[]
 ** xref:revpi_hardware/revpi_mio.adoc[]
