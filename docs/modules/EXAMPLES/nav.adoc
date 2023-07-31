@@ -1,2 +1,3 @@
 * xref:examples.adoc[]
-** xref:python/tensorflowlite.adoc[]
+** xref:python_introduction.adoc[Python]
+*** xref:python/tensorflowlite.adoc[]
