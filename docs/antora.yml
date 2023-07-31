@@ -4,6 +4,4 @@ version: 1.0
 prerelease: -beta.1
 nav:
   - modules/ROOT/nav.adoc
-  - modules/examples/nav.adoc
   - modules/faq/nav.adoc
-  - modules/legacy/nav.adoc

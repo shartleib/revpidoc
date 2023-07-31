@@ -26,6 +26,4 @@
 * xref:examples/examples.adoc[]
 ** xref:examples/python/tensorflowlite.adoc[]
 
-* xref:faq/faq.adoc[]
-
 * xref:legacy_hardware/legacy_hardware.adoc[]
