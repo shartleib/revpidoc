@@ -6,7 +6,104 @@ If you’ve only ever used Microsoft Windows or Apple macOS, don’t worry: Rasp
 
 == Connect remote to your RevPi via SSH
 
-== Connect remote to your REvPi via VNC
+SSH (Secure Shell) is a protocol used for securely connecting to and executing commands on remote systems, in case your RevPi. It solves the problem of potential data interception in insecure networks by encrypting all transmitted information.
+
+NOTE: To connect to your RevPi securely you only need to know its IP none or the names SN*.local
+
+=== For Windows
+
+. Download and install PuTTY, a free SSH client for Windows. You can download it from this URL: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+
+. Once installed, open PuTTY.
+
+. In the 'Host Name (or IP address)' field, enter the IP address of your Raspberry Pi.
+
+. Ensure that the Port is set to 22 (this is the default port for SSH).
+
+. Click 'Open'.
+
+. If this is your first time connecting to the Raspberry Pi from this computer, you'll receive a warning. Click 'Yes' to continue.
+
+. You will be prompted to enter your username and password for the Raspberry Pi. The default username is `pi` and the password is on the right side of your device.
+
+=== For Mac OS
+
+. Open Terminal (You can find Terminal in Applications -> Utilities, or by searching for it in Spotlight).
+
+. Type the following command, replacing 'your_pi_ip' with your Raspberry Pi's IP address: `ssh pi@your_pi_ip`
+
+. The first time you connect, you'll see a message saying the authenticity of the host can't be established. Type 'yes' to continue.
+
+. You'll then be prompted to enter your Raspberry Pi's password. As with Windows, the default username is `pi` and the password is on the right side of your device.
+
+=== For Linux
+
+The process for Debian Linux is very similar to the process for Mac.
+
+. Open a terminal.
+
+. Use the SSH command to connect to your Raspberry Pi, replacing 'your_pi_ip' with your Raspberry Pi's IP address: `ssh pi@your_pi_ip`
+
+. Like with the Mac, you'll see a message about the authenticity of the host the first time you connect. Type 'yes' to continue.
+
+. Enter your password when prompted. The default username is `pi` and the password is on the right side of your device.
+
+
+== Connect remote to your RevPi via VNC
+
+VNC, or Virtual Network Computing, is a graphical desktop sharing system that uses the Remote Frame Buffer protocol to remotely control another computer. It transmits the keyboard and mouse events from one computer to another, relaying the graphical screen updates back in the other direction, over a network.
+
+The problem VNC solves is the need for remote access to a computer system's graphical desktop environment. This can be useful in various scenarios such as technical support, remote work, or managing servers that are physically located in different places. It allows the user to interact with the remote machine as if they were sitting directly in front of it, even if the two machines are geographically far apart.
+
+NOTE: To connect to your RevPi using RealVNC, you must have the VNC Server running on your RevPi. You can enable this by going to the RevPi configuration settings (`sudo raspi-config`) > `Interface Options` > `VNC` > `Yes`.
+
+=== For Windows:
+
+. Download and install the VNC Viewer from the RealVNC website: https://www.realvnc.com/en/connect/download/combined/
+
+. Open VNC Viewer and click on the `File` menu and then `New Connection`.
+
+. In the VNC Server field, enter the IP address of your Raspberry Pi.
+
+. Click OK.
+
+. Now, in the main viewer window, double-click on the new connection you just created.
+
+. You'll be asked for a username and password. If you haven't changed these on your Raspberry Pi, they'll be "pi" and "raspberry", respectively.
+
+. You're now connected to your Raspberry Pi via RealVNC from your Windows PC.
+
+=== For Mac:
+
+. Download and install the VNC Viewer from the RealVNC website: https://www.realvnc.com/en/connect/download/combined/
+
+. Open VNC Viewer from your Applications folder.
+
+. Click on `File` > `New Connection`.
+
+. In the VNC Server field, enter the IP address of your Raspberry Pi.
+
+. Click OK.
+
+. In the main viewer window, double-click on the new connection.
+
+. You'll be asked for a username and password. If you haven't changed these on your Raspberry Pi, they'll be "pi" and "raspberry", respectively.
+
+. You're now connected to your Raspberry Pi via RealVNC from your Mac.
+
+=== For Debian Linux:
+
+. Open your terminal.
+
+. Install VNC Viewer by typing the following command and pressing Enter: `sudo apt-get install realvnc-vnc-viewer`
+
+. After the installation, run VNC Viewer by typing `vncviewer` and pressing Enter.
+
+. In the VNC Server field, enter the IP address of your Raspberry Pi and press Enter.
+
+. You'll be asked for a username and password. If you haven't changed these on your Raspberry Pi, they'll be "pi" and "raspberry", respectively.
+
+. You're now connected to your Raspberry Pi via RealVNC from your Debian Linux machine.
 
 
 == Ethernet Ports
