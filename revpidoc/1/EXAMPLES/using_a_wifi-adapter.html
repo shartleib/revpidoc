@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Using a Wifi adapter tp-link TL-WN823N :: PoC Revolution Pi Dokumentation</title>
+    <link rel="prev" href="examples.html">
+    <link rel="next" href="python_introduction.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://shartleib.github.io/revpidoc">PoC Revolution Pi Dokumentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="revpidoc" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">PoC Revolution Pi Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Revolution Pi</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../revpi_quickstart.html">Quickstart</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../revpi_hardware/revpi_general.html">RevPi installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_general.html">RevPi installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_connect_3.html">Revolution Pi Connect 3</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_connect_4.html">Revolution Pi Connect 4</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_connect_flat.html">Revolution Pi Connect Flat</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_connect_compact.html">Revolution Pi Compact</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../revpi_software.html">RevPi software</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_software/revpi_pictory.html">PiCtory - Configurate your RevPi</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_software/revpi_webstatus.html">Web Status - Set basic setting on your RevPi</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../revpi_hardware/revpi_expansion_modules.html">Expansion modules</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_dio.html">RevPI Digital IO modules</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_aio.html">RevPI Analog IO module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_mio.html">RevPi Analog &amp; Digital mixed IO module</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_con_can.html">RevPi Con CAN</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_con_mbus.html">RevPi Con M-Bus</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_con_mbus_vhp.html">RevPi Con M-Bus VHP</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_gateway_profinet.html">RevPi Gateway PROFINET IRT Slave</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_gateway_profibus.html">RevPi Gateway PROFIBUS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_gateway_ethercat.html">RevPi Gateway EtherCAT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../revpi_hardware/revpi_gateway_ethernetip.html">RevPi Gateway EtherNet/IP</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="examples.html">Examples</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="using_a_wifi-adapter.html">Using a Wifi adapter tp-link TL-WN823N</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="python_introduction.html">Python</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="python/tensorflowlite.html">Object Detection with RevPi, Webcam and Tensorflow lite</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../FAQS/faq.html">FAQs</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../LEGACY/legacy.html">Legacy Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">PoC Revolution Pi Documentation</span>
+    <span class="version">1-beta.1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">PoC Revolution Pi Documentation</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1-beta.1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">PoC Revolution Pi Documentation</a></li>
+    <li><a href="examples.html">Examples</a></li>
+    <li><a href="using_a_wifi-adapter.html">Using a Wifi adapter tp-link TL-WN823N</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="https://github.com/shartleib/revpidoc/docs/edit/main/docs/modules/EXAMPLES/pages/using_a_wifi-adapter.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Using a Wifi adapter tp-link TL-WN823N</h1>
+<div class="sect1">
+<h2 id="the-right-wifi-adapter"><a class="anchor" href="#the-right-wifi-adapter"></a>the right Wifi adapter</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="step-by-step-anleitung"><a class="anchor" href="#step-by-step-anleitung"></a>Step by step Anleitung</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="flashen-des-aktuellen-image-auf-den-revpi-mit-rpiboot-und-balenaether"><a class="anchor" href="#flashen-des-aktuellen-image-auf-den-revpi-mit-rpiboot-und-balenaether"></a>Flashen des aktuellen Image auf den RevPi mit RPIBoot und balenaEther.</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>aktuelles RevPi Image: <a href="https://revolutionpi.de/download/12592/?tmstv=1691151510" class="bare">https://revolutionpi.de/download/12592/?tmstv=1691151510</a></p>
+</li>
+<li>
+<p>RPIBoot: <a href="https://github.com/raspberrypi/usbboot" class="bare">https://github.com/raspberrypi/usbboot</a></p>
+</li>
+<li>
+<p>balenaEther: <a href="https://etcher.balena.io/" class="bare">https://etcher.balena.io/</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="revpi-mit-dem-pc-über-den-microusb-port-an-der-front-verbinden-rpiboot-starten"><a class="anchor" href="#revpi-mit-dem-pc-über-den-microusb-port-an-der-front-verbinden-rpiboot-starten"></a>RevPi mit dem PC über den MicroUSB Port an der Front verbinden. RPIBoot starten (</h3>
+
+</div>
+<div class="sect2">
+<h3 id="nach-dem-flashen-des-revpi-mit-dem-aktuellen-image-und-einrichten-mac-seriennummer-müssen-alle-pakte-auf-den-aktuellen-stand-gebracht-werden"><a class="anchor" href="#nach-dem-flashen-des-revpi-mit-dem-aktuellen-image-und-einrichten-mac-seriennummer-müssen-alle-pakte-auf-den-aktuellen-stand-gebracht-werden"></a>Nach dem flashen des RevPi mit dem aktuellen Image und einrichten (MAC, Seriennummer) müssen alle Pakte auf den aktuellen Stand gebracht werden</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ sudo apt update
+pi@RevPi36551:~ $ sudp apt upgrade</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="installation-von-linux-headers-generic-und-dkms-um-eine-kernelupdate-auf-dem-gerät-machen-zu-können-wichtig-ist-den-vorherigen-schritt-nicht-zu-überspringen"><a class="anchor" href="#installation-von-linux-headers-generic-und-dkms-um-eine-kernelupdate-auf-dem-gerät-machen-zu-können-wichtig-ist-den-vorherigen-schritt-nicht-zu-überspringen"></a>Installation von linux-headers-generic und dkms, um eine Kernelupdate auf dem Gerät machen zu können. (Wichtig ist den vorherigen Schritt nicht zu überspringen)</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ sudo apt install raspberrypi-kernel-headers
+pi@RevPi36551:~ $ sudo apt install dkms</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="alle-pakete-anzeigen-lassen-die-auf-dem-system-installiert-sind"><a class="anchor" href="#alle-pakete-anzeigen-lassen-die-auf-dem-system-installiert-sind"></a>Alle Pakete anzeigen lassen die auf dem System installiert sind.</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ dpkg --get-selections</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Für das weitere Vorgehen sind folgede Pakte wichtig: raspberrypi-kernel-headers, build-essential, dkms, git.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="einen-ordner-erzeugen-für-das-github-projekt-und-in-den-ordner-gehen-mit-pwd-kann-man-sich-den-aktuellen-pfad-anzeigen-lassen-und-mit-ls-den-inhalt-mit-cd-geht-man-einen-ordner-nach-oben"><a class="anchor" href="#einen-ordner-erzeugen-für-das-github-projekt-und-in-den-ordner-gehen-mit-pwd-kann-man-sich-den-aktuellen-pfad-anzeigen-lassen-und-mit-ls-den-inhalt-mit-cd-geht-man-einen-ordner-nach-oben"></a>Einen Ordner erzeugen für das Github Projekt und in den Ordner gehen. (mit pwd kann man sich den aktuellen Pfad anzeigen lassen und mit ls den Inhalt, mit cd .. geht man einen Ordner nach oben)</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ mkdir wifi_driver
+pi@RevPi36551:~ $ cd wifi_driver/
+
+=== Das Github Projekt mit dem Treiber und Shell Script Clonen.
+
+[source,bash]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>pi@RevPi36551:~/wifi_driver $ git clone <a href="https://github.com/clnhub/rtl8192eu-linux.git" class="bare">https://github.com/clnhub/rtl8192eu-linux.git</a></p>
+</div>
+<div class="paragraph">
+<p>Cloning into 'rtl8192eu-linux'&#8230;&#8203;
+remote: Enumerating objects: 2231, done.
+remote: Counting objects: 100% (325/325), done.
+remote: Compressing objects: 100% (119/119), done.
+remote: Total 2231 (delta 266), reused 248 (delta 206), pack-reused 1906
+Receiving objects: 100% (2231/2231), 4.38 MiB | 4.08 MiB/s, done.
+Resolving deltas: 100% (1409/1409), done.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="in-das-github-projekt-ordner-springen"><a class="anchor" href="#in-das-github-projekt-ordner-springen"></a>In das Github Projekt Ordner springen.</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~/wifi_driver $ cd rtl8192eu-linux/</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="damit-man-den-richtigen-treiber-rtl8192eu-für-das-richtige-betriebssystem-arm-64bit-installiert-muss-die-datei-makefile-angepasst-werden"><a class="anchor" href="#damit-man-den-richtigen-treiber-rtl8192eu-für-das-richtige-betriebssystem-arm-64bit-installiert-muss-die-datei-makefile-angepasst-werden"></a>Damit man den richtigen Treiber (RTL8192EU) für das richtige Betriebssystem (ARM 64bit) installiert muss die Datei Makefile angepasst werden.</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~/wifi_driver/rtl8192eu-linux/ $ nano Makefile</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mit der Pfeiltaste nach unten navigieren bis zur Zeile "CONFIG_RTL8192E = y". Nur hier sollte ein "y" stehen.</p>
+</li>
+<li>
+<p>Mit der Pfeiltaste nach unten navigieren bis zur Zeile "CONFIG_PLATFORM_I386_PC = y". Mit der Pfeiltaste zum "y", das "y" löschen und ein "n" eintragen.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">CONFIG_PLATFORM_I386_PC = n</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mit der Pfeiltaste nach unten navigieren bis zur Zeile "CONFIG_PLATFORM_ARM_AARCH64 = n". Mit der Pfeiltaste zum "y", das "n" löschen und ein "y" eintragen.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">CONFIG_PLATFORM_ARM_AARCH64 = y</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Nach dem das Makefile angepasst wurde mit Strg+O speichern und mit Enter bestätigen, danach nano mit Strg+X schließen um wieder zurück auf Kommantozeile zu kommen.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="um-den-installationsprozess-zu-starten-muss-das-script-in-dem-github-projekt-aufgeführt-werden"><a class="anchor" href="#um-den-installationsprozess-zu-starten-muss-das-script-in-dem-github-projekt-aufgeführt-werden"></a>Um den Installationsprozess zu starten muss das Script in dem Github Projekt aufgeführt werden.</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~/wifi_driver/rtl8192eu-linux $ sudo ./install_wifi.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Jetzt kann es etwas dauern&#8230;&#8203; Ausgabe:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">rmmod: ERROR: Module 8192eu is not currently loaded
+rmmod: ERROR: Module rtl8xxxu is not currently loaded
+Error! The module rtl8192eu 1.0 is not currently installed.
+This module is not currently ACTIVE for kernel 5.10.152-rt75-v8 (aarch64).
+Error! There is no instance of rtl8192eu 1.0
+for kernel 5.10.152-rt75-v8 (aarch64) located in the DKMS tree.
+
+Creating symlink /var/lib/dkms/rtl8192eu/1.0/source -&gt;
+/usr/src/rtl8192eu-1.0
+
+DKMS: add completed.
+
+Kernel preparation unnecessary for this kernel.  Skipping...
+
+Building module:
+cleaning build area...
+'make' -j4 all KVER=5.10.152-rt75-v8...........................................................................................................................
+cleaning build area...
+
+DKMS: build completed.
+
+8192eu.ko:
+Running module version sanity check.
+- Original module
+- No original module exists within this kernel
+- Installation
+- Installing to /lib/modules/5.10.152-rt75-v8/updates/dkms/
+
+depmod......
+
+DKMS: install completed.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="grundvoraussetzung-ist-das-der-wifi-adapter-erkannt-wird"><a class="anchor" href="#grundvoraussetzung-ist-das-der-wifi-adapter-erkannt-wird"></a>Grundvoraussetzung ist das der Wifi Adapter erkannt wird.</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ lsusb</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ausgabe:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">Bus 001 Device 008: ID 0403:6001 Future Technology Devices International, Ltd FT232 Serial (UART) IC
+Bus 001 Device 007: ID 0403:6001 Future Technology Devices International, Ltd FT232 Serial (UART) IC
+Bus 001 Device 006: ID 0424:ec00 Microchip Technology, Inc. (formerly SMSC) SMSC9512/9514 Fast Ethernet Adapter
+Bus 001 Device 005: ID 0424:9512 Microchip Technology, Inc. (formerly SMSC) SMC9512/9514 USB Hub
+Bus 001 Device 004: ID 2357:0109 TP-Link TL-WN823N v2/v3 [Realtek RTL8192EU]
+Bus 001 Device 003: ID 0424:ec00 Microchip Technology, Inc. (formerly SMSC) SMSC9512/9514 Fast Ethernet Adapter
+Bus 001 Device 002: ID 0424:9514 Microchip Technology, Inc. (formerly SMSC) SMC9514 Hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="der-nächte-und-letzte-schritt-ist-das-der-wifi-adapter-als-interface-zur-verfügung-steht"><a class="anchor" href="#der-nächte-und-letzte-schritt-ist-das-der-wifi-adapter-als-interface-zur-verfügung-steht"></a>Der nächte und letzte Schritt ist das der Wifi Adapter als Interface zur Verfügung steht.</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ ifconfig</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ausgabe</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">eth0: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+inet 192.168.88.246  netmask 255.255.255.0  broadcast 192.168.88.255
+inet6 fe80::ca3e:a7ff:fe01:6bf7  prefixlen 64  scopeid 0x20&lt;link&gt;
+ether c8:3e:a7:01:6b:f7  txqueuelen 1000  (Ethernet)
+RX packets 141  bytes 12988 (12.6 KiB)
+RX errors 0  dropped 4  overruns 0  frame 0
+TX packets 140  bytes 24446 (23.8 KiB)
+TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth1: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
+ether c8:3e:a7:01:6b:f8  txqueuelen 1000  (Ethernet)
+RX packets 0  bytes 0 (0.0 B)
+RX errors 0  dropped 0  overruns 0  frame 0
+TX packets 0  bytes 0 (0.0 B)
+TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
+inet 127.0.0.1  netmask 255.0.0.0
+inet6 ::1  prefixlen 128  scopeid 0x10&lt;host&gt;
+loop  txqueuelen 1000  (Local Loopback)
+RX packets 36  bytes 6203 (6.0 KiB)
+RX errors 0  dropped 0  overruns 0  frame 0
+TX packets 36  bytes 6203 (6.0 KiB)
+TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+pileft: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
+ether 96:eb:00:ae:5a:1b  txqueuelen 1000  (Ethernet)
+RX packets 0  bytes 0 (0.0 B)
+RX errors 0  dropped 0  overruns 0  frame 0
+TX packets 0  bytes 0 (0.0 B)
+TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+device interrupt 184
+
+wlan0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
+ether 78:8c:b5:e1:80:00  txqueuelen 1000  (Ethernet)
+RX packets 0  bytes 0 (0.0 B)
+RX errors 0  dropped 0  overruns 0  frame 0
+TX packets 0  bytes 0 (0.0 B)
+TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="jetzt-kann-der-wifi-adapter-verwendet-werden-um-ihn-mit-einem-wlan-zu-verbinden-muss-er-konfiguriert-werden"><a class="anchor" href="#jetzt-kann-der-wifi-adapter-verwendet-werden-um-ihn-mit-einem-wlan-zu-verbinden-muss-er-konfiguriert-werden"></a>Jetzt kann der Wifi Adapter verwendet werden. Um ihn mit einem WLAN zu verbinden muss er konfiguriert werden.</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ sudo raspi-config</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testen-kann-man-die-verbindung-in-dem-man-sich-einfach-auf-webstatus-per-webbrowser-verbindet-oder-in-dem-man-die-bandbreite-auf-dem-gerät-testet-speedtest-cli-installieren"><a class="anchor" href="#testen-kann-man-die-verbindung-in-dem-man-sich-einfach-auf-webstatus-per-webbrowser-verbindet-oder-in-dem-man-die-bandbreite-auf-dem-gerät-testet-speedtest-cli-installieren"></a>Testen kann man die Verbindung in dem man sich einfach auf webstatus per Webbrowser verbindet oder in dem man die Bandbreite auf dem Gerät testet (speedtest-cli installieren).</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ sudo apt install speedtest-cli
+pi@RevPi36551:~ $ speedtest-cli</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ausgabe:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Retrieving speedtest.net configuration...
+Testing from Vodafone Germany Cable (46.5.255.58)...
+Retrieving speedtest.net server list...
+Selecting best server based on ping...
+Hosted by La Regie (Reichshoffen) [111.72 km]: 88.492 ms
+Testing download speed................................................................................
+Download: 50.57 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 38.13 Mbit/s</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="examples.html">Examples</a></span>
+  <span class="next"><a href="python_introduction.html">Python</a></span>
+</nav>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../_/js/site.js" data-ui-root-path="../../../_"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
