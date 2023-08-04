@@ -1,16 +1,18 @@
-= Using a Wifi adapter tp-link TL-WN823N
+= Using a Wifi adapter tp-link TL-WN823N (RTL8192EU)
 
 == Step by step Anleitung
 
-=== Flashen des aktuellen Image auf den RevPi mit RPIBoot und balenaEther.
+=== Vorbereitung des RevPi
+
+Flashen des aktuellen Image auf den RevPi mit RPIBoot und balenaEther.
 
 * aktuelles RevPi Image: https://revolutionpi.de/download/12592/?tmstv=1691151510
 * RPIBoot: https://github.com/raspberrypi/usbboot
 * balenaEther: https://etcher.balena.io/
 
-=== RevPi mit dem PC über den MicroUSB Port an der Front verbinden und RPIBoot starten.
+RevPi mit dem PC über den MicroUSB Port an der Front verbinden und RPIBoot starten.
 
-=== Nach dem flashen des RevPi mit dem aktuellen Image und einrichten (MAC, Seriennummer) müssen alle Pakte auf den aktuellen Stand gebracht werden
+Nach dem flashen des RevPi mit dem aktuellen Image und einrichten (MAC, Seriennummer) müssen alle Pakte auf den aktuellen Stand gebracht werden
 
 [source,bash]
 ----
@@ -23,7 +25,9 @@ pi@RevPi36551:~ $ sudo apt update
 pi@RevPi36551:~ $ sudp apt upgrade
 ----
 
-=== Installation von linux-headers-generic und dkms, um eine Kernelupdate auf dem Gerät machen zu können. (Wichtig ist den vorherigen Schritt nicht zu überspringen)
+=== System für die Installation des Treiber vorbereiten
+
+Installation von linux-headers-generic und dkms, um eine Kernelupdate auf dem Gerät machen zu können. (Wichtig ist den vorherigen Schritt nicht zu überspringen)
 
 [source,bash]
 ----
@@ -44,7 +48,7 @@ pi@RevPi36551:~ $ dpkg --get-selections
 
 IMPORTANT: Für das weitere Vorgehen sind folgede Pakte wichtig: raspberrypi-kernel-headers, build-essential, dkms, git.
 
-=== Einen Ordner erzeugen für das Github Projekt und in den Ordner gehen. (mit pwd kann man sich den aktuellen Pfad anzeigen lassen und mit ls den Inhalt, mit cd .. geht man einen Ordner nach oben)
+Einen Ordner erzeugen für das Github Projekt und in den Ordner gehen. (mit pwd kann man sich den aktuellen Pfad anzeigen lassen und mit ls den Inhalt, mit cd .. geht man einen Ordner nach oben)
 
 [source,bash]
 ----
@@ -55,7 +59,7 @@ pi@RevPi36551:~ $ mkdir wifi_driver
 pi@RevPi36551:~ $ cd wifi_driver/
 ----
 
-=== Das Github Projekt mit dem Treiber und Shell Script Clonen.
+Das Github Projekt mit dem Treiber und Shell Script Clonen.
 
 [source,bash]
 ----
@@ -70,14 +74,16 @@ Receiving objects: 100% (2231/2231), 4.38 MiB | 4.08 MiB/s, done.
 Resolving deltas: 100% (1409/1409), done.
 ----
 
-=== In das Github Projekt Ordner springen.
+In das Github Projekt Ordner springen.
 
 [source,bash]
 ----
 pi@RevPi36551:~/wifi_driver $ cd rtl8192eu-linux/
 ----
 
-=== Damit man den richtigen Treiber (RTL8192EU) für das richtige Betriebssystem (ARM 64bit) installiert muss die Datei Makefile angepasst werden.
+=== Installation des Treiber
+
+Damit man den richtigen Treiber (RTL8192EU) für das richtige Betriebssystem (ARM 64bit) installiert muss die Datei Makefile angepasst werden.
 
 [source,bash]
 ----
@@ -102,7 +108,7 @@ CONFIG_PLATFORM_ARM_AARCH64 = y
 
 * Nach dem das Makefile angepasst wurde mit Strg+O speichern und mit Enter bestätigen, danach nano mit Strg+X schließen um wieder zurück auf Kommantozeile zu kommen.
 
-===  Um den Installationsprozess zu starten muss das Script in dem Github Projekt aufgeführt werden.
+Um den Installationsprozess zu starten muss das Script in dem Github Projekt aufgeführt werden.
 
 [source,bash]
 ----
@@ -146,12 +152,15 @@ depmod......
 DKMS: install completed.
 ----
 
-=== Grundvoraussetzung ist das der Wifi Adapter erkannt wird.
+=== Testen der Installation
+
+Grundvoraussetzung ist das der Wifi Adapter erkannt wird.
 
 [source,bash]
 ----
 pi@RevPi36551:~ $ lsusb
 ----
+
 Ausgabe:
 
 [source,bash]
@@ -166,7 +175,7 @@ Bus 001 Device 002: ID 0424:9514 Microchip Technology, Inc. (formerly SMSC) SMC9
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 ----
 
-=== Der nächte und letzte Schritt ist das der Wifi Adapter als Interface zur Verfügung steht.
+Der nächte und letzte Schritt ist das der Wifi Adapter als Interface zur Verfügung steht.
 
 [source,bash]
 ----
@@ -218,18 +227,20 @@ TX packets 0  bytes 0 (0.0 B)
 TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ----
 
-=== Jetzt kann der Wifi Adapter verwendet werden. Um ihn mit einem WLAN zu verbinden muss er konfiguriert werden.
+=== WLAN Interface konfigurieren
+
+Jetzt kann der Wifi Adapter verwendet werden. Um ihn mit einem WLAN zu verbinden muss er konfiguriert werden.
 
 [source,bash]
 ----
 pi@RevPi36551:~ $ sudo raspi-config
 ----
 
+*In Arbeit*
 
 
 
-
-=== Testen kann man die Verbindung in dem man sich einfach auf webstatus per Webbrowser verbindet oder in dem man die Bandbreite auf dem Gerät testet (speedtest-cli installieren).
+Testen kann man die Verbindung in dem man sich einfach auf webstatus per Webbrowser verbindet oder in dem man die Bandbreite auf dem Gerät testet (speedtest-cli installieren).
 
 [source,bash]
 ----
