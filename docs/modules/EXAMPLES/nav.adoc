@@ -1,3 +1,5 @@
 * xref:examples.adoc[]
+** xref:using_a_wifi-adapter.adoc[]
 ** xref:python_introduction.adoc[Python]
 *** xref:python/tensorflowlite.adoc[]
+
