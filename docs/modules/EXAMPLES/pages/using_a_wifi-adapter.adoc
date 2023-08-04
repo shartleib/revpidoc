@@ -115,7 +115,9 @@ Um den Installationsprozess zu starten muss das Script in dem Github Projekt auf
 pi@RevPi36551:~/wifi_driver/rtl8192eu-linux $ sudo ./install_wifi.sh
 ----
 
-Jetzt kann es etwas dauern... Ausgabe:
+NOTE: Der Schritt etwas dauern.
+
+Ausgabe:
 
 [source,bash]
 ----
@@ -236,15 +238,25 @@ Jetzt kann der Wifi Adapter verwendet werden. Um ihn mit einem WLAN zu verbinden
 pi@RevPi36551:~ $ sudo raspi-config
 ----
 
-*In Arbeit*
+In raspi-config können unter System Option > S1 Wireless LAN > WLAN Zugangsdaten hinzugefügt werden.
 
+image:screenshot_raspi-config_3.png[]
 
+image:screenshot_raspi-config_2.png[]
+
+image:screenshot_raspi-config_1.png[]
+
+=== WLAN Interface testen
 
 Testen kann man die Verbindung in dem man sich einfach auf webstatus per Webbrowser verbindet oder in dem man die Bandbreite auf dem Gerät testet (speedtest-cli installieren).
 
 [source,bash]
 ----
 pi@RevPi36551:~ $ sudo apt install speedtest-cli
+----
+
+[source,bash]
+----
 pi@RevPi36551:~ $ speedtest-cli
 ----
 
