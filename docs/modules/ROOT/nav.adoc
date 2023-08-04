@@ -7,11 +7,11 @@
 ** xref:revpi_hardware/revpi_connect_flat.adoc[]
 ** xref:revpi_hardware/revpi_connect_compact.adoc[]
 
-* xref:revpi_software.adoc[]
+* xref:revpi_software.adoc[RevPi software]
 ** xref:revpi_software/revpi_pictory.adoc[]
 ** xref:revpi_software/revpi_webstatus.adoc[]
 
-* xref:revpi_hardware/revpi_expansion_modules.adoc[]
+* xref:revpi_hardware/revpi_expansion_modules.adoc[Expansion modules]
 ** xref:revpi_hardware/revpi_dio.adoc[]
 ** xref:revpi_hardware/revpi_aio.adoc[]
 ** xref:revpi_hardware/revpi_mio.adoc[]

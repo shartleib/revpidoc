@@ -1,9 +1,8 @@
-= Object Detection with Revolution Pi
+= Object Detection with RevPi, Webcam and Tensorflow lite
 
 This Example demonstrate object detection in combination with Revolution Pi and Tensor Flow Lite.
 
 == What is Tensor Flow Lite
-
 
 TensorFlow Lite is an open-source deep learning framework developed by Google for on-device inference of machine learning models. It's designed to be lightweight and efficient, enabling the execution of ML models on devices with limited computational resources like smartphones and IoT devices. TensorFlow Lite supports a variety of ML models and leverages hardware acceleration if available.
 
