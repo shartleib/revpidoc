@@ -15,6 +15,11 @@
 [source,bash]
 ----
 pi@RevPi36551:~ $ sudo apt update
+----
+
+[source,bash]
+----
+
 pi@RevPi36551:~ $ sudp apt upgrade
 ----
 
@@ -23,6 +28,10 @@ pi@RevPi36551:~ $ sudp apt upgrade
 [source,bash]
 ----
 pi@RevPi36551:~ $ sudo apt install raspberrypi-kernel-headers
+----
+
+[source,bash]
+----
 pi@RevPi36551:~ $ sudo apt install dkms
 ----
 
@@ -40,7 +49,11 @@ IMPORTANT: Für das weitere Vorgehen sind folgede Pakte wichtig: raspberrypi-ker
 [source,bash]
 ----
 pi@RevPi36551:~ $ mkdir wifi_driver
+----
+[source,bash]
+----
 pi@RevPi36551:~ $ cd wifi_driver/
+----
 
 === Das Github Projekt mit dem Treiber und Shell Script Clonen.
 
@@ -55,6 +68,7 @@ remote: Compressing objects: 100% (119/119), done.
 remote: Total 2231 (delta 266), reused 248 (delta 206), pack-reused 1906
 Receiving objects: 100% (2231/2231), 4.38 MiB | 4.08 MiB/s, done.
 Resolving deltas: 100% (1409/1409), done.
+----
 
 === In das Github Projekt Ordner springen.
 
