@@ -1,7 +1,5 @@
 = Using a Wifi adapter tp-link TL-WN823N
 
-== the right Wifi adapter
-
 == Step by step Anleitung
 
 === Flashen des aktuellen Image auf den RevPi mit RPIBoot und balenaEther.
@@ -10,7 +8,7 @@
 * RPIBoot: https://github.com/raspberrypi/usbboot
 * balenaEther: https://etcher.balena.io/
 
-=== RevPi mit dem PC über den MicroUSB Port an der Front verbinden. RPIBoot starten (
+=== RevPi mit dem PC über den MicroUSB Port an der Front verbinden und RPIBoot starten.
 
 === Nach dem flashen des RevPi mit dem aktuellen Image und einrichten (MAC, Seriennummer) müssen alle Pakte auf den aktuellen Stand gebracht werden
 
