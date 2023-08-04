@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Using a Wifi adapter tp-link TL-WN823N :: PoC Revolution Pi Dokumentation</title>
+    <title>Using a Wifi adapter tp-link TL-WN823N (RTL8192EU) :: PoC Revolution Pi Dokumentation</title>
     <link rel="prev" href="examples.html">
     <link rel="next" href="python_introduction.html">
     <meta name="generator" content="Antora 3.1.4">
@@ -142,7 +142,7 @@
     <a class="nav-link" href="examples.html">Examples</a>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="using_a_wifi-adapter.html">Using a Wifi adapter tp-link TL-WN823N</a>
+    <a class="nav-link" href="using_a_wifi-adapter.html">Using a Wifi adapter tp-link TL-WN823N (RTL8192EU)</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -201,7 +201,7 @@
   <ul>
     <li><a href="../index.html">PoC Revolution Pi Documentation</a></li>
     <li><a href="examples.html">Examples</a></li>
-    <li><a href="using_a_wifi-adapter.html">Using a Wifi adapter tp-link TL-WN823N</a></li>
+    <li><a href="using_a_wifi-adapter.html">Using a Wifi adapter tp-link TL-WN823N (RTL8192EU)</a></li>
   </ul>
 </nav>
 <div class="edit-this-page"><a href="https://github.com/shartleib/revpidoc/docs/edit/main/docs/modules/EXAMPLES/pages/using_a_wifi-adapter.adoc">Edit this Page</a></div>
@@ -211,18 +211,15 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Using a Wifi adapter tp-link TL-WN823N</h1>
-<div class="sect1">
-<h2 id="the-right-wifi-adapter"><a class="anchor" href="#the-right-wifi-adapter"></a>the right Wifi adapter</h2>
-<div class="sectionbody">
-
-</div>
-</div>
+<h1 class="page">Using a Wifi adapter tp-link TL-WN823N (RTL8192EU)</h1>
 <div class="sect1">
 <h2 id="step-by-step-anleitung"><a class="anchor" href="#step-by-step-anleitung"></a>Step by step Anleitung</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="flashen-des-aktuellen-image-auf-den-revpi-mit-rpiboot-und-balenaether"><a class="anchor" href="#flashen-des-aktuellen-image-auf-den-revpi-mit-rpiboot-und-balenaether"></a>Flashen des aktuellen Image auf den RevPi mit RPIBoot und balenaEther.</h3>
+<h3 id="vorbereitung-des-revpi"><a class="anchor" href="#vorbereitung-des-revpi"></a>Vorbereitung des RevPi</h3>
+<div class="paragraph">
+<p>Flashen des aktuellen Image auf den RevPi mit RPIBoot und balenaEther.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -236,26 +233,36 @@
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>RevPi mit dem PC über den MicroUSB Port an der Front verbinden und RPIBoot starten.</p>
 </div>
-<div class="sect2">
-<h3 id="revpi-mit-dem-pc-über-den-microusb-port-an-der-front-verbinden-rpiboot-starten"><a class="anchor" href="#revpi-mit-dem-pc-über-den-microusb-port-an-der-front-verbinden-rpiboot-starten"></a>RevPi mit dem PC über den MicroUSB Port an der Front verbinden. RPIBoot starten (</h3>
-
+<div class="paragraph">
+<p>Nach dem flashen des RevPi mit dem aktuellen Image und einrichten (MAC, Seriennummer) müssen alle Pakte auf den aktuellen Stand gebracht werden</p>
 </div>
-<div class="sect2">
-<h3 id="nach-dem-flashen-des-revpi-mit-dem-aktuellen-image-und-einrichten-mac-seriennummer-müssen-alle-pakte-auf-den-aktuellen-stand-gebracht-werden"><a class="anchor" href="#nach-dem-flashen-des-revpi-mit-dem-aktuellen-image-und-einrichten-mac-seriennummer-müssen-alle-pakte-auf-den-aktuellen-stand-gebracht-werden"></a>Nach dem flashen des RevPi mit dem aktuellen Image und einrichten (MAC, Seriennummer) müssen alle Pakte auf den aktuellen Stand gebracht werden</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ sudo apt update
-pi@RevPi36551:~ $ sudp apt upgrade</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ sudo apt update</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ sudp apt upgrade</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-von-linux-headers-generic-und-dkms-um-eine-kernelupdate-auf-dem-gerät-machen-zu-können-wichtig-ist-den-vorherigen-schritt-nicht-zu-überspringen"><a class="anchor" href="#installation-von-linux-headers-generic-und-dkms-um-eine-kernelupdate-auf-dem-gerät-machen-zu-können-wichtig-ist-den-vorherigen-schritt-nicht-zu-überspringen"></a>Installation von linux-headers-generic und dkms, um eine Kernelupdate auf dem Gerät machen zu können. (Wichtig ist den vorherigen Schritt nicht zu überspringen)</h3>
+<h3 id="system-für-die-installation-des-treiber-vorbereiten"><a class="anchor" href="#system-für-die-installation-des-treiber-vorbereiten"></a>System für die Installation des Treiber vorbereiten</h3>
+<div class="paragraph">
+<p>Installation von linux-headers-generic und dkms, um eine Kernelupdate auf dem Gerät machen zu können. (Wichtig ist den vorherigen Schritt nicht zu überspringen)</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ sudo apt install raspberrypi-kernel-headers
-pi@RevPi36551:~ $ sudo apt install dkms</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ sudo apt install raspberrypi-kernel-headers</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ sudo apt install dkms</code></pre>
 </div>
 </div>
 </div>
@@ -278,34 +285,38 @@ Für das weitere Vorgehen sind folgede Pakte wichtig: raspberrypi-kernel-headers
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>Einen Ordner erzeugen für das Github Projekt und in den Ordner gehen. (mit pwd kann man sich den aktuellen Pfad anzeigen lassen und mit ls den Inhalt, mit cd .. geht man einen Ordner nach oben)</p>
 </div>
-<div class="sect2">
-<h3 id="einen-ordner-erzeugen-für-das-github-projekt-und-in-den-ordner-gehen-mit-pwd-kann-man-sich-den-aktuellen-pfad-anzeigen-lassen-und-mit-ls-den-inhalt-mit-cd-geht-man-einen-ordner-nach-oben"><a class="anchor" href="#einen-ordner-erzeugen-für-das-github-projekt-und-in-den-ordner-gehen-mit-pwd-kann-man-sich-den-aktuellen-pfad-anzeigen-lassen-und-mit-ls-den-inhalt-mit-cd-geht-man-einen-ordner-nach-oben"></a>Einen Ordner erzeugen für das Github Projekt und in den Ordner gehen. (mit pwd kann man sich den aktuellen Pfad anzeigen lassen und mit ls den Inhalt, mit cd .. geht man einen Ordner nach oben)</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ mkdir wifi_driver
-pi@RevPi36551:~ $ cd wifi_driver/
-
-=== Das Github Projekt mit dem Treiber und Shell Script Clonen.
-
-[source,bash]</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ mkdir wifi_driver</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ cd wifi_driver/</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>pi@RevPi36551:~/wifi_driver $ git clone <a href="https://github.com/clnhub/rtl8192eu-linux.git" class="bare">https://github.com/clnhub/rtl8192eu-linux.git</a></p>
+<p>Das Github Projekt mit dem Treiber und Shell Script Clonen.</p>
 </div>
-<div class="paragraph">
-<p>Cloning into 'rtl8192eu-linux'&#8230;&#8203;
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~/wifi_driver $ git clone https://github.com/clnhub/rtl8192eu-linux.git
+
+Cloning into 'rtl8192eu-linux'...
 remote: Enumerating objects: 2231, done.
 remote: Counting objects: 100% (325/325), done.
 remote: Compressing objects: 100% (119/119), done.
 remote: Total 2231 (delta 266), reused 248 (delta 206), pack-reused 1906
 Receiving objects: 100% (2231/2231), 4.38 MiB | 4.08 MiB/s, done.
-Resolving deltas: 100% (1409/1409), done.</p>
+Resolving deltas: 100% (1409/1409), done.</code></pre>
 </div>
 </div>
-<div class="sect2">
-<h3 id="in-das-github-projekt-ordner-springen"><a class="anchor" href="#in-das-github-projekt-ordner-springen"></a>In das Github Projekt Ordner springen.</h3>
+<div class="paragraph">
+<p>In das Github Projekt Ordner springen.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~/wifi_driver $ cd rtl8192eu-linux/</code></pre>
@@ -313,7 +324,10 @@ Resolving deltas: 100% (1409/1409), done.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="damit-man-den-richtigen-treiber-rtl8192eu-für-das-richtige-betriebssystem-arm-64bit-installiert-muss-die-datei-makefile-angepasst-werden"><a class="anchor" href="#damit-man-den-richtigen-treiber-rtl8192eu-für-das-richtige-betriebssystem-arm-64bit-installiert-muss-die-datei-makefile-angepasst-werden"></a>Damit man den richtigen Treiber (RTL8192EU) für das richtige Betriebssystem (ARM 64bit) installiert muss die Datei Makefile angepasst werden.</h3>
+<h3 id="installation-des-treiber"><a class="anchor" href="#installation-des-treiber"></a>Installation des Treiber</h3>
+<div class="paragraph">
+<p>Damit man den richtigen Treiber (RTL8192EU) für das richtige Betriebssystem (ARM 64bit) installiert muss die Datei Makefile angepasst werden.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~/wifi_driver/rtl8192eu-linux/ $ nano Makefile</code></pre>
@@ -353,9 +367,9 @@ Resolving deltas: 100% (1409/1409), done.</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Um den Installationsprozess zu starten muss das Script in dem Github Projekt aufgeführt werden.</p>
 </div>
-<div class="sect2">
-<h3 id="um-den-installationsprozess-zu-starten-muss-das-script-in-dem-github-projekt-aufgeführt-werden"><a class="anchor" href="#um-den-installationsprozess-zu-starten-muss-das-script-in-dem-github-projekt-aufgeführt-werden"></a>Um den Installationsprozess zu starten muss das Script in dem Github Projekt aufgeführt werden.</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~/wifi_driver/rtl8192eu-linux $ sudo ./install_wifi.sh</code></pre>
@@ -401,7 +415,10 @@ DKMS: install completed.</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="grundvoraussetzung-ist-das-der-wifi-adapter-erkannt-wird"><a class="anchor" href="#grundvoraussetzung-ist-das-der-wifi-adapter-erkannt-wird"></a>Grundvoraussetzung ist das der Wifi Adapter erkannt wird.</h3>
+<h3 id="testen-der-installation"><a class="anchor" href="#testen-der-installation"></a>Testen der Installation</h3>
+<div class="paragraph">
+<p>Grundvoraussetzung ist das der Wifi Adapter erkannt wird.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ lsusb</code></pre>
@@ -422,9 +439,9 @@ Bus 001 Device 002: ID 0424:9514 Microchip Technology, Inc. (formerly SMSC) SMC9
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Der nächte und letzte Schritt ist das der Wifi Adapter als Interface zur Verfügung steht.</p>
 </div>
-<div class="sect2">
-<h3 id="der-nächte-und-letzte-schritt-ist-das-der-wifi-adapter-als-interface-zur-verfügung-steht"><a class="anchor" href="#der-nächte-und-letzte-schritt-ist-das-der-wifi-adapter-als-interface-zur-verfügung-steht"></a>Der nächte und letzte Schritt ist das der Wifi Adapter als Interface zur Verfügung steht.</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ ifconfig</code></pre>
@@ -478,15 +495,21 @@ TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="jetzt-kann-der-wifi-adapter-verwendet-werden-um-ihn-mit-einem-wlan-zu-verbinden-muss-er-konfiguriert-werden"><a class="anchor" href="#jetzt-kann-der-wifi-adapter-verwendet-werden-um-ihn-mit-einem-wlan-zu-verbinden-muss-er-konfiguriert-werden"></a>Jetzt kann der Wifi Adapter verwendet werden. Um ihn mit einem WLAN zu verbinden muss er konfiguriert werden.</h3>
+<h3 id="wlan-interface-konfigurieren"><a class="anchor" href="#wlan-interface-konfigurieren"></a>WLAN Interface konfigurieren</h3>
+<div class="paragraph">
+<p>Jetzt kann der Wifi Adapter verwendet werden. Um ihn mit einem WLAN zu verbinden muss er konfiguriert werden.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ sudo raspi-config</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p><strong>In Arbeit</strong></p>
 </div>
-<div class="sect2">
-<h3 id="testen-kann-man-die-verbindung-in-dem-man-sich-einfach-auf-webstatus-per-webbrowser-verbindet-oder-in-dem-man-die-bandbreite-auf-dem-gerät-testet-speedtest-cli-installieren"><a class="anchor" href="#testen-kann-man-die-verbindung-in-dem-man-sich-einfach-auf-webstatus-per-webbrowser-verbindet-oder-in-dem-man-die-bandbreite-auf-dem-gerät-testet-speedtest-cli-installieren"></a>Testen kann man die Verbindung in dem man sich einfach auf webstatus per Webbrowser verbindet oder in dem man die Bandbreite auf dem Gerät testet (speedtest-cli installieren).</h3>
+<div class="paragraph">
+<p>Testen kann man die Verbindung in dem man sich einfach auf webstatus per Webbrowser verbindet oder in dem man die Bandbreite auf dem Gerät testet (speedtest-cli installieren).</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">pi@RevPi36551:~ $ sudo apt install speedtest-cli
