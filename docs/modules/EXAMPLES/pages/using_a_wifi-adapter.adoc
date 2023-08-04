@@ -3,9 +3,9 @@
 == Step by step Anleitung
 === Flashen des aktuellen Image auf den RevPi mit RPIBoot und balenaEther.
 
-* aktuelles RevPi Image:
-* RPIBoot (WIN):
-* balenaEther (WIN):
+* aktuelles RevPi Image: https://revolutionpi.de/download/12592/?tmstv=1691151510
+* RPIBoot: https://github.com/raspberrypi/usbboot
+* balenaEther: https://etcher.balena.io/
 
 === RevPi mit dem PC über den MicroUSB Port an der Front verbinden. RPIBoot starten (
 
