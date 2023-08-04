@@ -1,6 +1,9 @@
 = Using a Wifi adapter tp-link TL-WN823N
+
 == the right Wifi adapter
+
 == Step by step Anleitung
+
 === Flashen des aktuellen Image auf den RevPi mit RPIBoot und balenaEther.
 
 * aktuelles RevPi Image: https://revolutionpi.de/download/12592/?tmstv=1691151510
@@ -27,7 +30,7 @@ pi@RevPi36551:~ $ sudo apt install dkms
 
 === Alle Pakete anzeigen lassen die auf dem System installiert sind.
 
-[sourcebash]
+[source,bash]
 ----
 pi@RevPi36551:~ $ dpkg --get-selections
 ----
@@ -36,14 +39,14 @@ IMPORTANT: Für das weitere Vorgehen sind folgede Pakte wichtig: raspberrypi-ker
 
 === Einen Ordner erzeugen für das Github Projekt und in den Ordner gehen. (mit pwd kann man sich den aktuellen Pfad anzeigen lassen und mit ls den Inhalt, mit cd .. geht man einen Ordner nach oben)
 
-[sourcebash]
+[source,bash]
 ----
 pi@RevPi36551:~ $ mkdir wifi_driver
 pi@RevPi36551:~ $ cd wifi_driver/
 
 === Das Github Projekt mit dem Treiber und Shell Script Clonen.
 
-[sourcebash]
+[source,bash]
 ----
 pi@RevPi36551:~/wifi_driver $ git clone https://github.com/clnhub/rtl8192eu-linux.git
 
@@ -62,7 +65,7 @@ Resolving deltas: 100% (1409/1409), done.
 pi@RevPi36551:~/wifi_driver $ cd rtl8192eu-linux/
 ----
 
-===  Damit man den richtigen Treiber (RTL8192EU) für das richtige Betriebssystem (ARM 64bit) installiert muss die Datei Makefile angepasst werden.
+=== Damit man den richtigen Treiber (RTL8192EU) für das richtige Betriebssystem (ARM 64bit) installiert muss die Datei Makefile angepasst werden.
 
 [source,bash]
 ----
