@@ -1,4 +1,4 @@
-= Introduction to Codesys
+= Codesys
 
 The PLC programming system Codesys makes it possible to illustrate PLC programming according to IEC 61131 on tasks from process and factory automation. This software is used in controllers from various manufacturers (including ABB, KUNBUS, Schneider, Beckhoff) for the automation of machines and systems.
 
