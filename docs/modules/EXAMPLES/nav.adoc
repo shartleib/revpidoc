@@ -1,5 +1,8 @@
 * xref:examples.adoc[]
-** xref:using_a_wifi-adapter.adoc[]
+** xref:basics/using_a_wifi-adapter.adoc[]
 ** xref:python_introduction.adoc[Python]
 *** xref:python/tensorflowlite.adoc[]
+** xref:codesys_introduction.adoc[]
+*** xref:codesys/controle_dio_and_aio_with_codesys.adoc[]
+
 
