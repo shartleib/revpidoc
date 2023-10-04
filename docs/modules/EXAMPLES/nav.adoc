@@ -1,9 +1,11 @@
 * xref:examples.adoc[]
-** xref:network/using_a_wifi-adapter.adoc[]
-** xref:python_introduction.adoc[Python]
+** xref:basics/tooling_mobaxterm.adoc[]
+** xref:network/network_introduction.adoc[]
+*** xref:network/using_a_wifi-adapter.adoc[]
+** xref:python/python_introduction.adoc[Python]
 *** xref:python/tensorflowlite.adoc[]
 ** xref:docker/docker_introduction.adoc[Docker]
-** xref:codesys_introduction.adoc[]
+** xref:codesys/codesys_introduction.adoc[]
 *** xref:codesys/controle_dio_and_aio_with_codesys.adoc[]
 
 
