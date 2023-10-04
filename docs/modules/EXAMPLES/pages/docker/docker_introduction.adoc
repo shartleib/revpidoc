@@ -1,6 +1,6 @@
 = Docker Container and Docker Compose
 
-== What is Docker Container?
+== What is a Docker Container?
 A Docker container is like a virtual box that encloses an application and everything it needs to run. Inside this box are the application software, libraries, and settings needed to run the application. Docker containers are isolated and can run on different computers and servers, regardless of the environment they are launched on. This makes applications in containers portable and easy to manage. Docker containers are a way to run applications in clean and separate environments, which prevents problems when different applications run on the same computer.
 
 == What is Docker Compose?
@@ -33,13 +33,13 @@ NOTE: Overall, Docker provides an efficient way to run applications on your RevP
 
 Choosing between Revolution Pi OS 32-bit and 64-bit can have implications for the use of Docker. Here are some important considerations:
 
-=== Revolution Pi OS 32-Bit
+Revolution Pi OS 32-Bit
 
 Compatibility::: Revolution Pi OS 32-bit is more compatible with older hardware and software. If you're using applications that only offer 32-bit support, this might be the better choice.
 
 Limited Memory Access::: 32-bit operating systems are limited to a finite amount of memory, typically less than 4 GB of RAM. This can constrain the performance and scalability of Docker applications if you require more RAM.
 
-=== Revolution Pi OS 64-Bit
+Revolution Pi OS 64-Bit
 
 Improved Performance::: Raspberry Pi OS 64-bit can benefit from 64-bit-capable hardware and potentially offers better performance and memory management, especially if you have over 4 GB of RAM.
 
@@ -49,17 +49,17 @@ Up-to-Date Software::: Some software packages and libraries are better optimized
 
 NOTE: Keep in mind that Docker generally works better on 64-bit systems by default and is supported by many official Docker images. If you plan to run many Docker containers or containerized applications with 64-bit requirements, using Raspberry Pi OS 64-bit is likely the better choice. Ensure that your hardware is also 64-bit-capable, as older Raspberry Pi models may not be supported.
 
-=== You find the DOWNLOAD for the 64-bit Image of Revolution Pi OS here:
+You find the DOWNLOAD for the 64-bit Image of Revolution Pi OS here:
 
-RevPi Bullseye 64-bit (08/2023) (ID: 7320)
-Customized version of Raspberry Pi OS Bullseye 64-bit suitable for Revolution Pi.
-MD5 Hash: ad0c539f6d7a6d25a75db99587a48041
-https://revolutionpi.com/download/7320/?tmstv=1696406763
+    RevPi Bullseye 64-bit (08/2023) (ID: 7320)
+    Customized version of Raspberry Pi OS Bullseye 64-bit suitable for Revolution Pi.
+    MD5 Hash: ad0c539f6d7a6d25a75db99587a48041
+    https://revolutionpi.com/download/7320/?tmstv=1696406763
 
-RevPi Bullseye 64-bit Lite (08/2023) (ID: 7322)
-Customized version of Raspberry Pi OS Bullseye 64-bit Lite suitable for Revolution Pi.
-MD5 Hash: 8d246bfba5f47dd8e65f8a9dc5e89b61
-https://revolutionpi.com/download/7322/?tmstv=1696406763
+    RevPi Bullseye 64-bit Lite (08/2023) (ID: 7322)
+    Customized version of Raspberry Pi OS Bullseye 64-bit Lite suitable for Revolution Pi.
+    MD5 Hash: 8d246bfba5f47dd8e65f8a9dc5e89b61
+    https://revolutionpi.com/download/7322/?tmstv=1696406763
 
 == Install Docker on your RevPi
 
