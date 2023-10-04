@@ -13,7 +13,7 @@ Docker Compose provides commands to start, stop, and manage the entire applicati
 
 Using Docker and Docker Compose on your RevPi can make sense for several reasons:
 
-Isolation of applications::: Docker enables containerization of applications. This means that each application runs in its own container, isolated from other applications and the Raspberry Pi's operating system. This makes deploying and managing applications easier by avoiding conflicts between applications.
+Isolation of applications::: Docker enables containerization of applications. This means that each application runs in its own container, isolated from other applications and the RevPi operating system. This makes deploying and managing applications easier by avoiding conflicts between applications.
 
 Portability::: Docker containers are portable and can easily run on different platforms, including your RevPi. This makes it easier to develop and test applications on a powerful development machine and then deploy them to your RevPi.
 
