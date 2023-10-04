@@ -6,6 +6,7 @@
 *** xref:python/tensorflowlite.adoc[]
 ** xref:docker/docker_introduction.adoc[Docker]
 ** xref:codesys/codesys_introduction.adoc[]
+*** xref:codesys/codesys_installation.adoc[]
 *** xref:codesys/controle_dio_and_aio_with_codesys.adoc[]
 
 
