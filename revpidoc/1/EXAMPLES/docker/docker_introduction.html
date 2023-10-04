@@ -252,7 +252,7 @@ Docker Compose provides commands to start, stop, and manage the entire applicati
 <dl>
 <dt class="hdlist1">Isolation of applications</dt>
 <dd>
-<p>Docker enables containerization of applications. This means that each application runs in its own container, isolated from other applications and the Raspberry Pi&#8217;s operating system. This makes deploying and managing applications easier by avoiding conflicts between applications.</p>
+<p>Docker enables containerization of applications. This means that each application runs in its own container, isolated from other applications and the RevPi operating system. This makes deploying and managing applications easier by avoiding conflicts between applications.</p>
 </dd>
 <dt class="hdlist1">Portability</dt>
 <dd>
@@ -287,10 +287,160 @@ Docker Compose provides commands to start, stop, and manage the entire applicati
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Overall, Docker provides an efficient way to run applications on your RevPi by improving isolation, portability, resource management, scalability, and simplifying application management. This is especially useful in environments where you want to host multiple services or applications on a Raspberry Pi.
+Overall, Docker provides an efficient way to run applications on your RevPi by improving isolation, portability, resource management, scalability, and simplifying application management. This is especially useful in environments where you want to host multiple services or applications on your RevPi.
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="32-bit-or-64-bit-os"><a class="anchor" href="#32-bit-or-64-bit-os"></a>32-bit or 64-bit OS</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Choosing between Revolution Pi OS 32-bit and 64-bit can have implications for the use of Docker. Here are some important considerations:</p>
+</div>
+<div class="sect2">
+<h3 id="revolution-pi-os-32-bit"><a class="anchor" href="#revolution-pi-os-32-bit"></a>Revolution Pi OS 32-Bit</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Compatibility</dt>
+<dd>
+<p>Revolution Pi OS 32-bit is more compatible with older hardware and software. If you&#8217;re using applications that only offer 32-bit support, this might be the better choice.</p>
+</dd>
+<dt class="hdlist1">Limited Memory Access</dt>
+<dd>
+<p>32-bit operating systems are limited to a finite amount of memory, typically less than 4 GB of RAM. This can constrain the performance and scalability of Docker applications if you require more RAM.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="revolution-pi-os-64-bit"><a class="anchor" href="#revolution-pi-os-64-bit"></a>Revolution Pi OS 64-Bit</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Improved Performance</dt>
+<dd>
+<p>Raspberry Pi OS 64-bit can benefit from 64-bit-capable hardware and potentially offers better performance and memory management, especially if you have over 4 GB of RAM.</p>
+</dd>
+<dt class="hdlist1">64-Bit Docker</dt>
+<dd>
+<p>If you intend to run Docker containers with 64-bit applications, a 64-bit operating system is required. Some applications, especially in the x86-64 world, are only available for 64-bit systems.</p>
+</dd>
+<dt class="hdlist1">Up-to-Date Software</dt>
+<dd>
+<p>Some software packages and libraries are better optimized for 64-bit systems, and you gain access to newer 64-bit applications and developments.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Keep in mind that Docker generally works better on 64-bit systems by default and is supported by many official Docker images. If you plan to run many Docker containers or containerized applications with 64-bit requirements, using Raspberry Pi OS 64-bit is likely the better choice. Ensure that your hardware is also 64-bit-capable, as older Raspberry Pi models may not be supported.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="you-find-the-download-for-the-64-bit-image-of-revolution-pi-os-here"><a class="anchor" href="#you-find-the-download-for-the-64-bit-image-of-revolution-pi-os-here"></a>You find the DOWNLOAD for the 64-bit Image of Revolution Pi OS here:</h3>
+<div class="paragraph">
+<p>RevPi Bullseye 64-bit (08/2023) (ID: 7320)
+Customized version of Raspberry Pi OS Bullseye 64-bit suitable for Revolution Pi.
+MD5 Hash: ad0c539f6d7a6d25a75db99587a48041
+<a href="https://revolutionpi.com/download/7320/?tmstv=1696406763" class="bare">https://revolutionpi.com/download/7320/?tmstv=1696406763</a></p>
+</div>
+<div class="paragraph">
+<p>RevPi Bullseye 64-bit Lite (08/2023) (ID: 7322)
+Customized version of Raspberry Pi OS Bullseye 64-bit Lite suitable for Revolution Pi.
+MD5 Hash: 8d246bfba5f47dd8e65f8a9dc5e89b61
+<a href="https://revolutionpi.com/download/7322/?tmstv=1696406763" class="bare">https://revolutionpi.com/download/7322/?tmstv=1696406763</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="install-docker-on-your-revpi"><a class="anchor" href="#install-docker-on-your-revpi"></a>Install Docker on your RevPi</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Installing Docker CE (Community Edition) on the Revolution Pi OS requires running just a few commands. The best way to install Docker is to fetch it from the official Docker repositories, so to ensure that you’re always running the latest version.</p>
+</div>
+<div class="paragraph">
+<p>To install Docker CE on your RevPi, both 32-bit and 64-bit, run:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install some required packages first</p>
+<div class="literalblock">
+<div class="content">
+<pre>sudo apt update</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo apt install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg2 \
+    software-properties-common</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Get the Docker signing key for packages</p>
+<div class="literalblock">
+<div class="content">
+<pre>curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | sudo apt-key add -</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Add the Docker official repos
+echo "deb [arch=$(dpkg --print-architecture)] <a href="https://download.docker.com/linux/$(" class="bare">https://download.docker.com/linux/$(</a>. /etc/os-release; echo "$ID") \
+     $(lsb_release -cs) stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list</p>
+</li>
+<li>
+<p>Install Docker</p>
+<div class="literalblock">
+<div class="content">
+<pre>sudo apt update</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sudo apt install -y --no-install-recommends \
+    docker-ce \
+    cgroupfs-mount</pre>
+</div>
+</div>
+</li>
+<li>
+<p>At this point, we just need to run two more commands to have the Docker service started and automatically launched at boot.</p>
+<div class="literalblock">
+<div class="content">
+<pre>sudo systemctl enable --now docker</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Now that we have Docker running, we can test it by running the “hello world” image:</p>
+<div class="literalblock">
+<div class="content">
+<pre>sudo docker run --rm hello-world</pre>
+</div>
+</div>
+</li>
+<li>
+<p>If everything is working, the command above will output something similar to:</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
