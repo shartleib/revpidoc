@@ -1,0 +1,30 @@
+= Docker Container and Docker Compose
+
+== What is Docker Container?
+A Docker container is like a virtual box that encloses an application and everything it needs to run. Inside this box are the application software, libraries, and settings needed to run the application. Docker containers are isolated and can run on different computers and servers, regardless of the environment they are launched on. This makes applications in containers portable and easy to manage. Docker containers are a way to run applications in clean and separate environments, which prevents problems when different applications run on the same computer.
+
+== What is Docker Compose?
+
+Docker Compose is a tool that allows you to define, configure, and manage multiple Docker containers together as part of an application. It uses a YAML file (usually called docker-compose.yml) to define the configuration of the containers and their relationships to each other.
+Docker Compose lets you group multiple services and containers into one application, which is especially useful if your application consists of multiple components, such as a web application, a database, and a cache.
+Docker Compose provides commands to start, stop, and manage the entire application or individual services in the application. This makes it easier to deploy and scale complex applications.
+
+== Why to use Docker on your RevPi?
+
+Using Docker and Docker Compose on your RevPi can make sense for several reasons:
+
+Isolation of applications::: Docker enables containerization of applications. This means that each application runs in its own container, isolated from other applications and the Raspberry Pi's operating system. This makes deploying and managing applications easier by avoiding conflicts between applications.
+
+Portability::: Docker containers are portable and can easily run on different platforms, including your RevPi. This makes it easier to develop and test applications on a powerful development machine and then deploy them to your RevPi.
+
+Resource management::: Docker allows you to control and limit the resources used by containers. This is especially useful on your RevPi because its resources are limited. You can specify how much CPU, RAM, and storage each container is allowed to use to ensure that your RevPi is used efficiently.
+
+Easy scalability::: With Docker Compose, you can easily launch and manage multiple containers at once, making it easy to scale your applications. For example, if you are running a web application with a database, you can run both in separate containers and easily launch them together using Docker Compose.
+
+Updates and rollbacks::: Docker allows you to easily update images and containers and roll back to previous versions if needed. This is useful when you want to test application updates and quickly roll back to the previous version if you encounter problems.
+
+Community and ecosystem::: Docker has a large user and developer community, as well as a rich ecosystem of pre-built containers and tools. This makes it easier to integrate applications and solve problems.
+
+Recoverability::: Using Docker containers makes it easier to recover your RevPi applications in case the Raspberry Pi fails or needs to be replaced. All you have to do is back up your container configuration and data, and then you can quickly restore to a new Raspberry Pi.
+
+NOTE: Overall, Docker provides an efficient way to run applications on your RevPi by improving isolation, portability, resource management, scalability, and simplifying application management. This is especially useful in environments where you want to host multiple services or applications on a Raspberry Pi.
