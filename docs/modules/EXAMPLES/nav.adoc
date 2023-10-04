@@ -1,5 +1,6 @@
 * xref:examples.adoc[]
-** xref:basics/tooling_mobaxterm.adoc[]
+** xref:basics/basics_introduction.adoc[]
+*** xref:basics/tooling_mobaxterm.adoc[]
 ** xref:network/network_introduction.adoc[]
 *** xref:network/using_a_wifi-adapter.adoc[]
 ** xref:python/python_introduction.adoc[Python]
