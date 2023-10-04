@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Control DIO and AIO with Codesys :: PoC Revolution Pi Dokumentation</title>
-    <link rel="prev" href="../codesys_introduction.html">
-    <link rel="next" href="../../FAQS/faq.html">
+    <title>Docker Container and Docker Compose :: PoC Revolution Pi Dokumentation</title>
+    <link rel="prev" href="../python/tensorflowlite.html">
+    <link rel="next" href="../codesys_introduction.html">
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../../_/css/site.css">
   </head>
@@ -153,15 +153,15 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../docker/docker_introduction.html">Docker Container and Docker Compose</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="docker_introduction.html">Docker Container and Docker Compose</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../codesys_introduction.html">Codesys</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="controle_dio_and_aio_with_codesys.html">Control DIO and AIO with Codesys</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../codesys/controle_dio_and_aio_with_codesys.html">Control DIO and AIO with Codesys</a>
   </li>
 </ul>
   </li>
@@ -213,18 +213,73 @@
   <ul>
     <li><a href="../../index.html">PoC Revolution Pi Documentation</a></li>
     <li><a href="../examples.html">Examples</a></li>
-    <li><a href="../codesys_introduction.html">Codesys</a></li>
-    <li><a href="controle_dio_and_aio_with_codesys.html">Control DIO and AIO with Codesys</a></li>
+    <li><a href="docker_introduction.html">Docker Container and Docker Compose</a></li>
   </ul>
 </nav>
-<div class="edit-this-page"><a href="https://github.com/shartleib/revpidoc/docs/edit/main/docs/modules/EXAMPLES/pages/codesys/controle_dio_and_aio_with_codesys.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/shartleib/revpidoc/docs/edit/main/docs/modules/EXAMPLES/pages/docker/docker_introduction.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Control DIO and AIO with Codesys</h1>
+<h1 class="page">Docker Container and Docker Compose</h1>
+<div class="sect1">
+<h2 id="what-is-docker-container"><a class="anchor" href="#what-is-docker-container"></a>What is Docker Container?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Docker container is like a virtual box that encloses an application and everything it needs to run. Inside this box are the application software, libraries, and settings needed to run the application. Docker containers are isolated and can run on different computers and servers, regardless of the environment they are launched on. This makes applications in containers portable and easy to manage. Docker containers are a way to run applications in clean and separate environments, which prevents problems when different applications run on the same computer.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what-is-docker-compose"><a class="anchor" href="#what-is-docker-compose"></a>What is Docker Compose?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Docker Compose is a tool that allows you to define, configure, and manage multiple Docker containers together as part of an application. It uses a YAML file (usually called docker-compose.yml) to define the configuration of the containers and their relationships to each other.
+Docker Compose lets you group multiple services and containers into one application, which is especially useful if your application consists of multiple components, such as a web application, a database, and a cache.
+Docker Compose provides commands to start, stop, and manage the entire application or individual services in the application. This makes it easier to deploy and scale complex applications.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="why-to-use-docker-on-your-revpi"><a class="anchor" href="#why-to-use-docker-on-your-revpi"></a>Why to use Docker on your RevPi?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using Docker and Docker Compose on your RevPi can make sense for several reasons:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Isolation of applications</dt>
+<dd>
+<p>Docker enables containerization of applications. This means that each application runs in its own container, isolated from other applications and the Raspberry Pi&#8217;s operating system. This makes deploying and managing applications easier by avoiding conflicts between applications.</p>
+</dd>
+<dt class="hdlist1">Portability</dt>
+<dd>
+<p>Docker containers are portable and can easily run on different platforms, including your RevPi. This makes it easier to develop and test applications on a powerful development machine and then deploy them to your RevPi.</p>
+</dd>
+<dt class="hdlist1">Resource management</dt>
+<dd>
+<p>Docker allows you to control and limit the resources used by containers. This is especially useful on your RevPi because its resources are limited. You can specify how much CPU, RAM, and storage each container is allowed to use to ensure that your RevPi is used efficiently.</p>
+</dd>
+<dt class="hdlist1">Easy scalability</dt>
+<dd>
+<p>With Docker Compose, you can easily launch and manage multiple containers at once, making it easy to scale your applications. For example, if you are running a web application with a database, you can run both in separate containers and easily launch them together using Docker Compose.</p>
+</dd>
+<dt class="hdlist1">Updates and rollbacks</dt>
+<dd>
+<p>Docker allows you to easily update images and containers and roll back to previous versions if needed. This is useful when you want to test application updates and quickly roll back to the previous version if you encounter problems.</p>
+</dd>
+<dt class="hdlist1">Community and ecosystem</dt>
+<dd>
+<p>Docker has a large user and developer community, as well as a rich ecosystem of pre-built containers and tools. This makes it easier to integrate applications and solve problems.</p>
+</dd>
+<dt class="hdlist1">Recoverability</dt>
+<dd>
+<p>Using Docker containers makes it easier to recover your RevPi applications in case the Raspberry Pi fails or needs to be replaced. All you have to do is back up your container configuration and data, and then you can quickly restore to a new Raspberry Pi.</p>
+</dd>
+</dl>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -232,14 +287,16 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-All sample programmes and solutions were created with Codesys V3.5.16.4. If you are still using an older version, it is best to install the version available under Downloads. If you are using a newer version, please set "All to latest" under Project|Project environment after opening the project files. In addition, please click on Device in the Devices window and right-click on "Update Device"!
+Overall, Docker provides an efficient way to run applications on your RevPi by improving isolation, portability, resource management, scalability, and simplifying application management. This is especially useful in environments where you want to host multiple services or applications on a Raspberry Pi.
 </td>
 </tr>
 </table>
 </div>
+</div>
+</div>
 <nav class="pagination">
-  <span class="prev"><a href="../codesys_introduction.html">Codesys</a></span>
-  <span class="next"><a href="../../FAQS/faq.html">FAQs</a></span>
+  <span class="prev"><a href="../python/tensorflowlite.html">Object Detection with RevPi, Webcam and Tensorflow lite</a></span>
+  <span class="next"><a href="../codesys_introduction.html">Codesys</a></span>
 </nav>
 </article>
   </div>
