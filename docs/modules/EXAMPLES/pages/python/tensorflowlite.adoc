@@ -1,4 +1,4 @@
-= Object Detection with RevPi, Webcam and Tensorflow lite
+= Object Detection with Tensorflow
 
 This Example demonstrate object detection in combination with Revolution Pi and Tensor Flow Lite.
 
