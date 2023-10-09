@@ -1,6 +1,6 @@
 * xref:index.adoc[]
 * xref:revpi_quickstart.adoc[]
-* xref:revpi_hardware/revpi_general.adoc[]
+* xref:revpi_hardware/revpi_general.adoc[RevPi Hardware]
 ** xref:revpi_hardware/revpi_general.adoc[]
 ** xref:revpi_hardware/revpi_connect_4.adoc[]
 ** xref:revpi_hardware/revpi_core_s.adoc[]
@@ -12,7 +12,7 @@
 ** xref:revpi_hardware/revpi_connect_flat.adoc[]
 ** xref:revpi_hardware/revpi_connect_compact.adoc[]
 
-* xref:revpi_software.adoc[RevPi software]
+* xref:revpi_software/revpi_software.adoc[RevPi software]
 ** xref:revpi_software/revpi_pictory.adoc[]
 ** xref:revpi_software/revpi_webstatus.adoc[]
 
