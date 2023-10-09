@@ -1,1 +1,19 @@
 = RevPi as a PLC with Python
+
+== Introduction
+
+https://revpimodio.org/en/revpipyplc-2/
+
+RevPiPyLoad – Daemon for the RevolutionPi
+
+RevPiPyControl – Graphical Interface for the control, monitoring and transfer of Python Programs
+
+== Goals
+
+== Hardware and Software Requirements
+
+=== Hardware Requirements
+
+=== Software Requirements
+
+== Connections
