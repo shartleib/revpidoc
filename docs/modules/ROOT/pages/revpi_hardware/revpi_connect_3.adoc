@@ -1,3 +1,26 @@
 = Revolution Pi Connect 3
 
-include::partial$note_revpi_connect_s_vs_se.adoc[]
+== Features
+
+== Specification
+
+== Connections
+
+=== Power supply
+
+=== Ethernet
+
+=== USB
+
+=== HDMI
+
+== Compatibility
+
+=== Hardware
+
+=== Software
+
+
+== Safety instructions
+
+== Disposal note
