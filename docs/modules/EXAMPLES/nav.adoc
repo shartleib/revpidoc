@@ -4,6 +4,7 @@
 ** xref:network/network_introduction.adoc[]
 *** xref:network/using_a_wifi-adapter.adoc[]
 ** xref:python/python_introduction.adoc[Python]
+** xref:python/revpipyplc_system.adoc[]
 *** xref:python/tensorflowlite.adoc[]
 ** xref:docker/docker_introduction.adoc[Docker]
 ** xref:codesys/codesys_introduction.adoc[]
