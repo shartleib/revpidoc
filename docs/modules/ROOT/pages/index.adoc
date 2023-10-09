@@ -7,23 +7,3 @@ To achieve a real industrial suitability according to EN 61131-2 or IEC 61131-2,
 
 == About this documentation
 
-=== documentation repository struktur
-
-[listing#ex-modules]
-----
-📒 repository
-    📂 export
-    📂 modules
-        📂 ROOT
-            📁 images
-            📂 pages
-                📂 examples
-                📂 faq
-                📂 legacy_hardware
-                📂 revpi_hardware
-                📂 revpi_software
-                📄 index.adoc
-            📂 partials
-            📄 nav.adoc
-    📄 antora.yml
-----

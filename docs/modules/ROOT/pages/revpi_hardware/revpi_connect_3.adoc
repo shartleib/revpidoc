@@ -1,4 +1,4 @@
-= Revolution Pi Connect 3
+= RevPi Connect 3
 
 == Features
 
