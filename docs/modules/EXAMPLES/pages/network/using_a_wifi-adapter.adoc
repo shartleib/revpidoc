@@ -12,7 +12,7 @@ Flashen des aktuellen Image auf den RevPi mit RPIBoot und balenaEther.
 
 RevPi mit dem PC über den MicroUSB Port an der Front verbinden und RPIBoot starten.
 
-Nach dem flashen des RevPi mit dem aktuellen Image und einrichten (MAC, Seriennummer) müssen alle Pakte auf den aktuellen Stand gebracht werden
+Nach dem Flashen des RevPi mit dem aktuellen Image und einrichten (MAC, Seriennummer) müssen alle Pakte auf den aktuellen Stand gebracht werden
 
 [source,bash]
 ----
@@ -25,7 +25,7 @@ pi@RevPi36551:~ $ sudo apt update
 pi@RevPi36551:~ $ sudp apt upgrade
 ----
 
-=== System für die Installation des Treiber vorbereiten
+=== System für die Installation des Treibers vorbereiten
 
 Installation von linux-headers-generic und dkms, um eine Kernelupdate auf dem Gerät machen zu können. (Wichtig ist den vorherigen Schritt nicht zu überspringen)
 
